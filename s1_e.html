@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post-War Standoff: The Race for Territory (1945)</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        /* Custom colors matching the main page's NHD theme */
+        .nhd-blue { background-color: #004c99; }
+        .text-nhd-blue { color: #004c99; }
+        .border-nhd-blue { border-color: #004c99; }
+        .nhd-light-blue { background-color: #e6f0ff; }
+        .nhd-gold { background-color: #ffc72c; }
+        .hover\:bg-nhd-blue\/90:hover { background-color: rgba(0, 76, 153, 0.9); }
+
+        /* Style for loading spinner */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #004c99;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<!-- Use flex to center the content vertically and horizontally -->
+<body class="min-h-screen flex items-center justify-center p-4 sm:p-6">
+
+    <!-- Card Container: Max width adjusted for slightly larger screens while maintaining mobile friendliness -->
+    <div class="bg-white p-6 sm:p-10 rounded-2xl shadow-xl ring-1 ring-gray-100 w-full max-w-xl transition-all duration-300">
+        
+        <!-- Go Back Button -->
+        <a href="index.html" 
+            class="inline-flex items-center text-sm font-bold text-nhd-blue hover:text-blue-800 transition duration-150 group">
+            <!-- Icon for going back (inline SVG) -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 mr-2 group-hover:-translate-x-0.5 transition-transform duration-150">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+            Back to Timeline
+        </a>
+
+        <div class="mt-6 border-b pb-4 border-gray-200">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight">Post-War Standoff: The Race for Territory (1945)</h1>
+            <p class="mt-2 text-gray-500 text-base">The immediate aftermath of World War II saw the rapid resurgence of conflict between the Nationalist and Communist forces.</p>
+        </div>
+
+        <div class="mt-8 space-y-6">
+            <h2 class="text-xl font-bold text-gray-800 border-l-4 border-nhd-blue pl-3">The Power Vacuum</h2>
+            
+            <!-- Detailed Content Area -->
+            <div class="p-6 nhd-light-blue rounded-xl border border-nhd-blue/50">
+                <h3 class="text-lg font-semibold text-nhd-blue mb-2">The Strategic Prize: Manchuria</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Upon Japan's sudden surrender in August 1945, a massive political and military vacuum opened across China. The long-standing truce between the Kuomintang (KMT) Nationalists and the Chinese Communist Party (CCP) immediately collapsed. Both sides rushed to occupy former Japanese-held cities and seize their immense caches of modern military equipment. The resource-rich region of Manchuria became the primary strategic battleground, essential for industrial power and geographical control.
+                </p>
+                
+                <ul class="list-disc pl-5 mt-4 text-gray-700 space-y-2">
+                    <li>KMT Strategy: Focused on re-establishing control over major central and southern cities. They relied heavily on U.S. airlifts and naval support to transport their troops quickly into these key metropolitan areas.</li>
+                    <li>CCP Strategy: Concentrated on rural infiltration and securing control of railway lines leading into Manchuria. They received critical logistical support and captured vast amounts of Japanese arms from the Soviet forces occupying the area.</li>
+                    <li>Failed Peace Talks: General George C. Marshall attempted to mediate a cease-fire between Chiang Kai-shek and Mao Zedong in late 1945, but mutual distrust and the race for strategic control rendered the diplomatic efforts unsuccessful.</li>
+                </ul>
+            </div>
+            
+            <!-- Interactive Element: API-powered Historical Search -->
+            <div class="pt-4 border-t border-gray-200">
+                <label for="prompt-input" class="block text-lg font-bold text-gray-800 mb-2">Dive Deeper: Research a Historical Term</label>
+                <p class="text-sm text-gray-600 mb-3">Ask about specific events or figures (e.g., "What was the Marshall Mission?" or "Describe the Soviet role in Manchuria").</p>
+                <textarea id="prompt-input" placeholder="Enter your historical question here..."
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-nhd-blue focus:border-nhd-blue transition duration-150 h-24 resize-none"></textarea>
+            </div>
+
+            <div id="results-output" class="hidden mt-4 p-4 rounded-xl border-2 border-nhd-gold/50 bg-nhd-gold/10">
+                <h3 class="text-md font-extrabold text-nhd-blue mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21 12 13.5H3.75z" />
+                    </svg>
+                    AI Research Result
+                </h3>
+                <!-- Results will be displayed here -->
+            </div>
+            
+            <div id="loading-indicator" class="hidden flex justify-center items-center py-4">
+                <div class="spinner"></div>
+                <span class="ml-3 text-nhd-blue font-medium">Generating Answer...</span>
+            </div>
+
+            <!-- Search Button -->
+            <button id="search-button"
+                class="w-full nhd-blue hover:bg-nhd-blue/90 text-white font-bold py-3 px-4 rounded-xl transition duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-2"
+                onclick="fetchHistoricalData()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>
+                <span>Run Historical Search</span>
+        </div>
+    </div>
+    
+    <!-- Custom Modal/Message Box for no-alert rule -->
+    <div id="message-box" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden items-center justify-center p-4 z-50">
+        <div class="bg-white p-6 rounded-xl shadow-2xl max-w-sm w-full">
+            <h3 class="text-xl font-bold text-nhd-blue mb-3">Notice</h3>
+            <p id="message-content" class="text-gray-700"></p>
+            <button class="mt-4 w-full nhd-blue text-white py-2 rounded-lg hover:bg-blue-800 transition" 
+                    onclick="document.getElementById('message-box').classList.add('hidden'); document.getElementById('message-box').classList.remove('flex');">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // NOTE: The __app_id, __firebase_config, and __initial_auth_token are provided automatically by the environment.
+        const apiKey = "AIzaSyBcXBwA8dpsfOvqeZ1gLUGVHA-FPoZm1WI"; // Canvas will provide this key in runtime
+        const apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=" + apiKey;
+
+        // Custom message box function to comply with the no-alert rule
+        function showCustomMessage(message, title = 'Notice') {
+            const msgBox = document.getElementById('message-box');
+            document.querySelector('#message-box h3').textContent = title;
+            document.getElementById('message-content').innerHTML = message;
+            msgBox.classList.remove('hidden');
+            msgBox.classList.add('flex');
+        }
+
+        async function fetchHistoricalData(retryCount = 0) {
+            const prompt = document.getElementById('prompt-input').value.trim();
+            const resultsOutput = document.getElementById('results-output');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            const searchButton = document.getElementById('search-button');
+            const maxRetries = 3;
+
+            if (!prompt) {
+                showCustomMessage('Please enter a term or question to search.', 'Input Required');
+                return;
+            }
+
+            // UI updates for loading state
+            resultsOutput.classList.add('hidden');
+            loadingIndicator.classList.remove('hidden');
+            searchButton.disabled = true;
+            searchButton.innerHTML = '<div class="spinner !border-l-white"></div><span class="ml-3">Searching...</span>';
+
+            const systemPrompt = "You are a specialized history tutor focused on the Chinese Civil War (1945-1949). Provide a concise, clear, and highly focused response to the user's query, ensuring your answer is directly relevant to the historical context of the conflict and uses the provided search results for grounding. The response must be a single, short paragraph.";
+
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }],
+                tools: [{ "google_search": {} }],
+                systemInstruction: { parts: [{ text: systemPrompt }] },
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.status === 429 && retryCount < maxRetries) {
+                    // Exponential backoff
+                    const delay = Math.pow(2, retryCount) * 1000;
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    return fetchHistoricalData(retryCount + 1);
+                }
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                const candidate = result.candidates?.[0];
+                let outputText = "<p class='text-gray-700'>No information found. Please try a different query.</p>";
+                let sourcesHtml = "";
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    const text = candidate.content.parts[0].text;
+                    
+                    // Extract and format grounding sources
+                    const groundingMetadata = candidate.groundingMetadata;
+                    if (groundingMetadata && groundingMetadata.groundingAttributions) {
+                        const sources = groundingMetadata.groundingAttributions
+                            .map(attribution => ({
+                                uri: attribution.web?.uri,
+                                title: attribution.web?.title,
+                            }))
+                            .filter(source => source.uri && source.title);
+                        
+                        if (sources.length > 0) {
+                            sourcesHtml = '<p class="text-xs font-semibold text-gray-600 mt-3 mb-1">Sources:</p><ul class="list-disc pl-5 text-xs text-gray-600 space-y-1">';
+                            sources.forEach((source, index) => {
+                                sourcesHtml += `<li><a href="${source.uri}" target="_blank" class="hover:underline text-nhd-blue">${source.title}</a></li>`;
+                            });
+                            sourcesHtml += '</ul>';
+                        }
+                    }
+
+                    outputText = `<p class="text-gray-800 font-medium">${text}</p>${sourcesHtml}`;
+                }
+
+                resultsOutput.innerHTML = outputText;
+                resultsOutput.classList.remove('hidden');
+
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                showCustomMessage(`An error occurred while fetching data: <code>${error.message}</code>`, 'API Error');
+            } finally {
+                // UI updates for completion
+                loadingIndicator.classList.add('hidden');
+                searchButton.disabled = false;
+                searchButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                                          </svg>
+                                          <span>Run Historical Search</span>`;
+            }
+        }
+    </script>
+
+</body>
+</html>

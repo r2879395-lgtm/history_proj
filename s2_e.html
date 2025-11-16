@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMT Initial Dominance: Chiang's Fatal Strategy (1945–1946)</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        /* Custom colors matching the main page's NHD theme */
+        .nhd-blue { background-color: #004c99; }
+        .text-nhd-blue { color: #004c99; }
+        .border-nhd-blue { border-color: #004c99; }
+        .nhd-light-blue { background-color: #e6f0ff; }
+        .nhd-gold { background-color: #ffc72c; }
+        .hover\:bg-nhd-blue\/90:hover { background-color: rgba(0, 76, 153, 0.9); }
+
+        /* Custom alert boxes for internal failures */
+        .failure-box {
+            border-left: 5px solid #dc2626; /* Red for failure */
+            background-color: #fef2f2; /* Light red background */
+        }
+    </style>
+</head>
+<!-- Use flex to center the content vertically and horizontally -->
+<body class="min-h-screen flex items-center justify-center p-4 sm:p-6">
+
+    <!-- Card Container: Max width adjusted for slightly larger screens while maintaining mobile friendliness -->
+    <div class="bg-white p-6 sm:p-10 rounded-2xl shadow-xl ring-1 ring-gray-100 w-full max-w-2xl transition-all duration-300">
+        
+        <!-- Go Back Button -->
+        <a href="index.html" 
+            class="inline-flex items-center text-sm font-bold text-nhd-blue hover:text-blue-800 transition duration-150 group">
+            <!-- Icon for going back (inline SVG) -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 mr-2 group-hover:-translate-x-0.5 transition-transform duration-150">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+            Back to Timeline
+        </a>
+
+        <div class="mt-6 border-b pb-4 border-gray-200">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight">KMT Initial Dominance: Chiang's Fatal Strategy (1945–1946)</h1>
+            <p class="mt-2 text-gray-500 text-base">The KMT, backed by massive US aid, held all the initial military advantages, but internal rot and strategic miscalculations sowed the seeds of their collapse within the first two years.</p>
+        </div>
+
+        <div class="mt-8 space-y-8">
+            
+            <!-- Section 1: Positional Warfare Strategy -->
+            <div class="space-y-4">
+                <h2 class="text-xl font-bold text-gray-800 border-l-4 border-nhd-blue pl-3">Chiang’s Focus on Positional Warfare </h2>
+                
+                <!-- Detailed Content Area -->
+                <div class="p-6 nhd-light-blue rounded-xl border border-nhd-blue/50">
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        **Chiang Kai-shek's** strategy relied on **positional warfare**—the seizure and defense of major urban centers, industrial zones, and vital transportation networks. The goal was to force the smaller Communist forces into conventional battles where the KMT’s superior troop numbers and US-supplied heavy weaponry would guarantee victory.
+                    </p>
+                    
+                    <h3 class="text-lg font-semibold text-nhd-blue mb-2">The Critical Flaws</h3>
+                    <ul class="list-disc pl-5 mt-4 text-gray-700 space-y-2">
+                        <li>**Urban Fixation:** While controlling cities meant controlling wealth, it alienated the KMT from the **rural peasantry**, who represented 80% of China and became the base for the CCP.</li>
+                        <li>**Manchurian Overextension:** Chiang committed over **300,000 elite troops** deep into Manchuria. This overstretched supply lines and left these vital forces isolated and vulnerable to the CCP's mobile warfare tactics.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section 2: Internal Failures -->
+            <div class="space-y-4">
+                <h2 class="text-xl font-bold text-gray-800 border-l-4 border-nhd-blue pl-3">The Fragile Foundation and Internal Failures</h2>
+                
+                <div class="p-6 bg-white rounded-xl border border-gray-200 space-y-4">
+                    <div class="p-4 rounded-lg failure-box shadow-sm">
+                        <h4 class="font-extrabold text-red-700 text-lg mb-1">Economic Collapse: Hyper-Inflation</h4>
+                        <p class="text-gray-800">
+                            The KMT's practice of printing money led to **catastrophic hyper-inflation**. This wiped out the savings of the urban middle class and fixed-income workers, turning their core support base against the Nationalist government.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-lg failure-box shadow-sm">
+                        <h4 class="font-extrabold text-red-700 text-lg mb-1">Rampant Corruption</h4>
+                        <p class="text-gray-800">
+                            High-level corruption meant US military and financial aid was frequently diverted or sold on the black market. This moral failure severely demoralized KMT troops and fueled popular outrage.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Custom Modal/Message Box for no-alert rule (RETAINED) -->
+    <div id="message-box" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden items-center justify-center p-4 z-50">
+        <div class="bg-white p-6 rounded-xl shadow-2xl max-w-sm w-full">
+            <h3 class="text-xl font-bold text-nhd-blue mb-3">Notice</h3>
+            <p id="message-content" class="text-gray-700"></p>
+            <button class="mt-4 w-full nhd-blue text-white py-2 rounded-lg hover:bg-blue-800 transition" 
+                        onclick="document.getElementById('message-box').classList.add('hidden'); document.getElementById('message-box').classList.remove('flex');">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Global variables provided by the environment
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let db = null;
+        let auth = null;
+
+        // Initialize Firebase
+        try {
+            if (Object.keys(firebaseConfig).length > 0) {
+                const app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+            } else {
+                console.error("Firebase configuration is missing.");
+            }
+        } catch (e) {
+            console.error("Error initializing Firebase:", e);
+        }
+
+        /**
+         * Custom message box function to comply with the no-alert rule.
+         */
+        function showCustomMessage(message, title = 'Notice') {
+            const msgBox = document.getElementById('message-box');
+            document.querySelector('#message-box h3').textContent = title;
+            document.getElementById('message-content').innerHTML = message;
+            msgBox.classList.remove('hidden');
+            msgBox.classList.add('flex');
+        }
+
+        /**
+         * Handles user authentication using the provided token or anonymously.
+         * @returns {string | null} The user ID if successful, otherwise null.
+         */
+        async function initializeAuth() {
+            if (!auth) return null;
+            try {
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+                return auth.currentUser.uid;
+            } catch (error) {
+                console.error("Firebase Auth Error:", error);
+                return null;
+            }
+        }
+
+        /**
+         * Saves the completion status of Part 2 to Firestore.
+         */
+        window.confirmCompletion = async function() {
+            const confirmButton = document.getElementById('confirm-button');
+            confirmButton.disabled = true;
+            confirmButton.textContent = 'Saving Progress...';
+
+            if (!db) {
+                showCustomMessage("Database not configured. Cannot save progress.", "Error");
+                confirmButton.disabled = false;
+                confirmButton.textContent = 'Confirm Read of Part 2';
+                return;
+            }
+
+            const userId = await initializeAuth();
+            if (!userId) {
+                showCustomMessage("Failed to authenticate user. Cannot save progress.", "Error");
+                confirmButton.disabled = false;
+                confirmButton.textContent = 'Confirm Read of Part 2';
+                return;
+            }
+
+            // Path to store the completion status for Part 2 in the user's private space
+            const docPath = `/artifacts/${appId}/users/${userId}/progress/part2_completed`;
+            const progressRef = doc(db, docPath);
+
+            try {
+                await setDoc(progressRef, {
+                    completed: true,
+                    timestamp: new Date(),
+                    part: 2
+                });
+                
+                showCustomMessage(
+                    'Your reading progress for **Part 2** has been saved. The next section on your Timeline is now unlocked!', 
+                    'Part 2 Confirmed & Unlocked'
+                );
+                
+                // Update button appearance to show success
+                confirmButton.textContent = 'Part 2 Confirmed!';
+                confirmButton.classList.remove('bg-gray-300', 'hover:bg-gray-400', 'text-gray-800');
+                confirmButton.classList.add('bg-green-600', 'hover:bg-green-700', 'text-white');
+
+            } catch (e) {
+                console.error("Error writing document: ", e);
+                showCustomMessage(`An error occurred while saving: ${e.message}`, "Database Error");
+                confirmButton.disabled = false;
+            }
+        }
+    </script>
+
+</body>
+</html>
