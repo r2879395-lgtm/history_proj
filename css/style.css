@@ -1,267 +1,115 @@
-/* NHD-Inspired Professional Design */
-
 /* Global variables */
-:root {
-  --nhd-blue: #004c99;
-  --nhd-blue-light: #0d5eb8;
-  --nhd-red: #dc2626;
-  --text-primary: #1f2937;
-  --text-secondary: #6b7280;
-  --bg-primary: #ffffff;
-  --bg-secondary: #f9fafb;
-  --border-light: #e5e7eb;
-  --accent-gold: #f59e0b;
+:root{
+	--nhd-blue: #004c99;
+	--nhd-red: #dc2626;
+	--muted: #6b7280;
+	--card-bg: #ffffff;
+	--page-bg: #f8fafc;
 }
 
 /* Base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html,body{
+	height:100%;
+}
+body{
+	background: var(--page-bg);
+	color: #111827;
+	font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
 }
 
-html, body {
-  height: 100%;
+/* Container helpers */
+.site-container{
+	max-width: 1100px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
-body {
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Header */
+.site-header{
+	text-align:center;
+	margin-bottom: 2.5rem;
+}
+.site-header h1{
+	font-size: clamp(1.6rem, 2.8vw, 3rem);
+	line-height:1.05;
+}
+.site-header p{
+	color: var(--muted);
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.25;
-  font-weight: 700;
+/* Cards / Steps */
+.step-card{
+	background: linear-gradient(180deg, var(--card-bg) 0%, #fbfdff 100%);
+	border-radius: 12px;
+	box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+	transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s;
+}
+.step-card:hover{
+	transform: translateY(-6px);
+	box-shadow: 0 20px 45px rgba(16,24,40,0.12);
 }
 
-h1 {
-  font-size: clamp(1.875rem, 5vw, 3.75rem);
-  margin-bottom: 1rem;
+/* Badge */
+.step-badge{
+	background: var(--nhd-blue);
+	color: #fff;
+	width:42px;height:42px;
+	display:flex;align-items:center;justify-content:center;
+	border-radius:8px;
+	font-weight:700;
 }
 
-h2 {
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: var(--nhd-blue);
+/* Typography helpers */
+.lead{
+	color: var(--muted);
+	font-size: 1.05rem;
 }
-
-h3 {
-  font-size: 1.125rem;
-  margin-bottom: 0.75rem;
-}
-
-p {
-  margin-bottom: 1rem;
-  color: var(--text-secondary);
-}
-
-a {
-  color: var(--nhd-blue);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-a:hover {
-  color: var(--nhd-blue-light);
-  text-decoration: underline;
-}
-
-/* Container */
-.max-w-6xl {
-  max-width: 64rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Header section */
-header {
-  text-align: center;
-  padding: 3rem 1.5rem;
-  background: linear-gradient(135deg, rgba(0, 76, 153, 0.02) 0%, rgba(245, 158, 11, 0.02) 100%);
-}
-
-header h1 {
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
-}
-
-header p {
-  font-size: 1.125rem;
-  color: var(--text-secondary);
-  max-width: 42rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Timeline section */
-.timeline-line {
-  background: linear-gradient(to bottom, var(--nhd-blue), rgba(0, 76, 153, 0.1));
-}
-
-/* Step cards - NHD style */
-.step-card {
-  background: var(--bg-primary);
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  border-left: 5px solid var(--nhd-blue);
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.step-card:hover {
-  box-shadow: 0 10px 30px rgba(0, 76, 153, 0.1);
-  transform: translateY(-4px);
-}
-
-.step-card a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.step-card h2 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-.step-card p {
-  margin: 0.5rem 0;
-}
-
-.step-card .view-details {
-  display: inline-block;
-  margin-top: 1rem;
-  color: var(--nhd-blue);
-  font-weight: 600;
-  transition: transform 0.2s;
-}
-
-.step-card .view-details:hover {
-  transform: translateX(4px);
-}
-
-/* Numbered badge */
-.step-card > a > div:first-child {
-  background: var(--nhd-blue);
-  color: white;
-  font-size: 1rem;
-  font-weight: 700;
-  border-radius: 0.5rem;
-}
-
-/* Comparison section */
-section.mt-20 {
-  background: var(--bg-primary);
-  padding: 3rem 1.5rem;
-  border-radius: 1rem;
-}
-
-section.mt-20 h2 {
-  color: var(--text-primary);
-  margin-top: 0;
-}
-
-.comparison-grid {
-  display: grid;
-  gap: 1rem;
-}
-
-.comparison-grid > div {
-  padding: 1rem;
-  border-bottom: 1px solid var(--border-light);
-}
-
-.comparison-grid > div:last-child {
-  border-bottom: none;
+.muted{
+	color: var(--muted);
 }
 
 /* Buttons */
-button {
-  background: var(--nhd-blue);
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  box-shadow: 0 2px 8px rgba(0, 76, 153, 0.15);
+.btn{
+	display:inline-flex;align-items:center;justify-content:center;
+	background: var(--nhd-blue); color:#fff; border-radius:10px;
+	padding: .6rem 1rem; font-weight:700; border:0;
+	box-shadow: 0 8px 18px rgba(2,6,23,0.06);
+	transition: transform .18s, box-shadow .18s, background .18s;
 }
+.btn:hover{ transform: translateY(-3px); box-shadow: 0 14px 30px rgba(2,6,23,0.09); }
 
-button:hover {
-  background: var(--nhd-blue-light);
-  box-shadow: 0 4px 16px rgba(0, 76, 153, 0.25);
-  transform: translateY(-2px);
-}
-
-/* Inputs */
-input, textarea {
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--border-light);
-  border-radius: 0.5rem;
-  font-family: inherit;
-  font-size: 1rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-input:focus, textarea:focus {
-  outline: none;
-  border-color: var(--nhd-blue);
-  box-shadow: 0 0 0 3px rgba(0, 76, 153, 0.1);
-}
+/* Comparison grid tweaks */
+.comparison-grid > div{ padding: .75rem; }
 
 /* Footer */
-footer {
-  background: var(--text-primary);
-  color: white;
-  text-align: center;
-  padding: 2rem 1.5rem;
-  margin-top: 3rem;
-  font-size: 0.875rem;
+footer.site-footer{ margin-top:3rem; padding-top:1.5rem; color:var(--muted); font-size:.95rem; text-align:center }
+
+/* Utility: subtle accent underline for headings */
+.accent-underline{ border-bottom:4px solid rgba(0,76,153,0.08); padding-bottom:.5rem; }
+
+/* Responsive adjustments */
+@media (min-width: 1024px){
+	.step-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap:1.25rem; }
 }
 
-footer p {
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0;
-}
+/* Small print (sources, credits) */
+.small-note{ font-size:.85rem; color:var(--muted); }
 
-/* Responsive spacing */
-@media (max-width: 640px) {
-  header {
-    padding: 2rem 1rem;
-  }
-  
-  section {
-    padding: 2rem 1rem !important;
-  }
+/* Make forms a bit nicer */
+input[type="text"], input[type="password"], textarea{
+	border-radius:10px; padding:.65rem .9rem; border:1px solid #e6e9ee; outline:none; transition: box-shadow .12s, border-color .12s;
 }
+input[type="text"]:focus, textarea:focus, input[type="password"]:focus{ box-shadow: 0 6px 18px rgba(2,6,23,0.06); border-color: var(--nhd-blue); }
 
-/* Utility classes */
-.nhd-blue {
-  background-color: var(--nhd-blue);
-}
+/* small helpers to match inline classes used in templates */
+.nhd-blue{ background-color: var(--nhd-blue); }
+.text-nhd-blue{ color: var(--nhd-blue); }
+.border-nhd-blue{ border-color: var(--nhd-blue); }
 
-.text-nhd-blue {
-  color: var(--nhd-blue);
-}
+/* Accessibility improvements */
+a:focus{ outline: 3px solid rgba(0,76,153,0.14); outline-offset:3px; }
 
-.border-nhd-blue {
-  border-color: var(--nhd-blue);
-}
-
-.text-ccp-red {
-  color: var(--nhd-red);
-}
-
-/* Accessibility */
-a:focus {
-  outline: 2px solid var(--nhd-blue);
-  outline-offset: 2px;
-  border-radius: 2px;
-}
