@@ -93,10 +93,12 @@ p {
 /* Typography helpers */
 .lead{
 	color: var(--muted);
-	font-size: 1.05rem;
+	font-size: 1.25rem;
+	font-weight: 500;
 }
 .muted{
 	color: var(--muted);
+	font-size: 1.05rem;
 }
 
 /* Buttons */
