@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sources & Bibliography - Chinese Civil War</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.png">
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        /* Fixed background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(0, 76, 153, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 102, 204, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* Main content wrapper */
+        .main-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Custom colors */
+        .nhd-blue { background-color: #004c99; }
+        .text-nhd-blue { color: #004c99; }
+        .border-nhd-blue { border-color: #004c99; }
+        
+        /* Header styling */
+        .page-header {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 76, 153, 0.12);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 76, 153, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 76, 153, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        
+        /* Back button */
+        .back-button {
+            transition: all 0.3s ease;
+            color: #004c99;
+        }
+        
+        .back-button:hover {
+            color: #003d7a;
+            transform: translateX(-4px);
+        }
+        
+        /* Section styling */
+        .source-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 76, 153, 0.12);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 76, 153, 0.12);
+            transition: all 0.3s ease;
+        }
+        
+        .source-section:hover {
+            box-shadow: 0 20px 45px rgba(0, 76, 153, 0.18);
+            transform: translateY(-2px);
+        }
+        
+        /* Source item styling */
+        .source-item {
+            padding: 1rem 1.25rem;
+            border-left: 3px solid #004c99;
+            background: linear-gradient(90deg, rgba(0, 76, 153, 0.05) 0%, transparent 100%);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .source-item:hover {
+            background: linear-gradient(90deg, rgba(0, 76, 153, 0.08) 0%, transparent 100%);
+            border-left-width: 5px;
+            padding-left: 1.5rem;
+        }
+        
+        /* Category badges */
+        .category-badge {
+            display: inline-block;
+            padding: 0.35rem 0.9rem;
+            background: linear-gradient(135deg, #004c99, #0066cc);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(0, 76, 153, 0.25);
+        }
+        
+        /* Heading styles */
+        h1 {
+            background: linear-gradient(135deg, #004c99 0%, #0066cc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1.5px;
+        }
+        
+        h2 {
+            color: #004c99;
+            letter-spacing: -0.5px;
+        }
+        
+        /* Link styling */
+        a {
+            color: #004c99;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        a:hover {
+            color: #0066cc;
+        }
+        
+        /* Citation styling */
+        .citation {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.7;
+        }
+        
+        .citation strong {
+            color: #004c99;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body class="py-8 sm:py-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 main-wrapper">
+        
+        <!-- Header Section -->
+        <div class="page-header p-8 sm:p-12 mb-10 relative">
+            <a href="index.html" 
+                class="back-button inline-flex items-center text-sm font-bold mb-6 group">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform duration-200">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
+                Back to Timeline
+            </a>
+            
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 relative z-10">Sources & Bibliography</h1>
+            <p class="text-lg text-gray-600 leading-relaxed max-w-3xl relative z-10">
+                A comprehensive collection of primary and secondary sources used in researching the Chinese Civil War (1945-1949). All sources are cited in proper academic format.
+            </p>
+        </div>
+
+        <!-- Primary Sources Section -->
+        <section class="source-section p-8 sm:p-10 mb-8">
+            <div class="mb-6">
+                <span class="category-badge">PRIMARY SOURCES</span>
+                <h2 class="text-3xl font-extrabold mt-4 mb-2">Contemporary Documents & Firsthand Accounts</h2>
+                <p class="text-gray-600">Original documents, memoirs, and firsthand testimonies from the period.</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="source-item">
+                    <p class="citation">
+                        <strong>Mao Zedong.</strong> <em>Selected Works of Mao Tse-tung</em>, Vols. 4-5. Beijing: Foreign Languages Press, 1961-1977. Print.
+                    </p>
+                </div>
+                
+                <div class="source-item">
+                    <p class="citation">
+                        <strong>United States Department of State.</strong> <em>United States Relations with China: With Special Reference to the Period 1944-1949</em> (The China White Paper). Washington, D.C.: U.S. Government Printing Office, 1949. Print.
+                    </p>
+                </div>
+                
+                <div class="source-item">
+                    <p class="citation">
+                        <strong>Marshall, George C.</strong> "The Marshall Mission to China, December 1945-January 1947." <em>Foreign Relations of the United States</em>, Vol. 7: The Far East: China. Washington, D.C.: U.S. Government Printing Office, 1971. Print.
+                    </p>
+                </div>
+                
+                <div class="source-item">
+                    <p class="citation">
+                        <strong>Chiang Kai-shek.</strong> <em>Soviet Russia in China: A Summing-Up at Seventy</em>. New York: Farrar, Straus and Cudahy, 1957. Print.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secondary Sources: Books Section -->
+        <section class="source-section p-8 sm:p-10 mb-8">
+            <div class="mb-6">
+                <span class="category-badge">SECONDARY SOURCES</span>
+                <h2 class="text-3xl font-extrabold mt-4 mb-2">Scholarly Books & Monographs</h2>
+                <p class="text-gray-600">Academic works by leading historians and scholars of modern Chinese history.</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="source-item">
+                    <p class="citation">
+                        <strong>Westad, Odd Arne.</strong> <em>Decisive Encounters: The Chinese Civil War, 1946-1950</em>. Stanford: Stanford University Press, 2003. Print.
+                    </p>
+                </div>
+                
+                <div class="source-item">
+                    <p class="citation">
+                        <strong>Pepper, Suzanne.</strong> <em>Civil War in China: The Political Struggle, 1945-1949</em>. 2nd ed. Lanham, MD: Rowman & Littlefield Publishers, 1999. Print.
+                    </p>
+                </div>
+                
+                <div class="source-item">
+                    <p class="citation">
+                        <strong>Levine, Steven I.</strong> <em>Anvil of Victory: The Communist Revolution in Manchuria, 1945-1948</em>. New York: Columbia University Press, 1987. Print.
+                    </p>
+                </div>
+                
+                <div class="source-item">
+                    <p class="citation">
+                        <strong>Lary, Diana.</strong> <em>China's Civil War: A Social History, 1945-1949</em>. Cambridge: Cambridge University Press, 2015. Print.
+                    </p>
+                </div>
+                
+                <div class="source-item">
+                    <p class="citation">
+                        <strong>Tanner, Harold M.</strong> <em>The Battle for Manchuria and the Fate of China: Siping, 1946</em>. Bloomington: Indiana University Press, 2013. Print.
+                    </p>
+                </div>
+                
+                <div class="source-item">
+                    <p class="citation">
+                        <strong>Eastman, Lloyd E.</strong> <em>Seeds of Destruction: Nationalist China in War and Revolution, 1937-1949</em>. Stanford: Stanford University Press, 1984. Print.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journal Articles Section -->
+        <section class="source-section p-8 sm:p-10 mb-8">
+            <div class="mb-6">
+                <span class="category-badge">JOURNAL ARTICLES</span>
+                <h2 class="text-3xl font-extrabold mt-4 mb-2">Academic Journal Publications</h2>
+                <p class="text-gray-600">Peer-reviewed articles from leading academic journals.</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="source-item">
+                    <p class="citation">
+                        <strong>Shen, Zhihua and Yafeng Xia.</strong> "Leadership Transfer in the Asian Revolution: Mao Zedong and the Asian Cominform." <em>Cold War History</em> 14.2 (2014): 195-213. Web.
+                    </p>
+                </div>
+                
+                <div class="source-item">
+                    <p class="citation">
+                        <strong>Sheng, Michael M.</strong> "Mao, Stalin, and the Formation of the Anti-Japanese United Front: 1935-37." <em>The China Quarterly</em> 129 (1992): 149-170. Web.
+                    </p>
+                </div>
+                
+                <div class="source-item">
+                    <p class="citation">
+                        <strong>Chassin, Lionel Max.</strong> "The Three Great Campaigns of 1948-1949." <em>The Communist Conquest of China: A History of the Civil War 1945-1949</em>. Cambridge: Harvard University Press, 1965. 166-201. Print.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digital Resources Section -->
+        <section class="source-section p-8 sm:p-10 mb-8">
+            <div class="mb-6">
+                <span class="category-badge">DIGITAL RESOURCES</span>
+                <h2 class="text-3xl font-extrabold mt-4 mb-2">Online Archives & Databases</h2>
+                <p class="text-gray-600">Digital collections and online historical resources.</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="source-item">
+                    <p class="citation">
+                        <strong>Wilson Center Digital Archive.</strong> "Chinese Civil War Collection." <em>History and Public Policy Program Digital Archive</em>. Woodrow Wilson International Center for Scholars. Web. Accessed 2024.
+                    </p>
+                </div>
+                
+                <div class="source-item">
+                    <p class="citation">
+                        <strong>Stanford University.</strong> "Chinese Civil War Resources." <em>Hoover Institution Archives</em>. Web. Accessed 2024.
+                    </p>
+                </div>
+                
+                <div class="source-item">
+                    <p class="citation">
+                        <strong>Library of Congress.</strong> "Chinese Civil War Photograph Collection." <em>Prints and Photographs Division</em>. Web. Accessed 2024.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-12 pt-8 border-t-2 border-blue-200 text-center">
+            <p class="text-gray-600 text-sm">
+                This bibliography represents key sources consulted for this National History Day project.<br>
+                Additional sources available upon request.
+            </p>
+            <p class="text-gray-500 text-xs mt-3">
+                &copy; 2024 Chinese Civil War National History Day Project
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
