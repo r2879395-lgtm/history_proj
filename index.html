@@ -26,8 +26,12 @@
         transition: transform 0.3s, box-shadow 0.3s;
     }
     .step-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Slightly bigger shadow on hover */
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px rgba(0, 76, 153, 0.2);
+    }
+    .step-card {
+        background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%) !important;
+        border-radius: 16px;
     }
     /* Custom blue color inspired by NHD branding */
     .nhd-blue {
@@ -143,44 +147,44 @@
         });
     </script>
 
-    <div class="max-w-6xl mx-auto py-12 px-6 sm:px-10">
-        <!-- Header -->
-        <header class="text-center mb-12 site-header">
-            <h1 style="font-size: clamp(3rem, 10vw, 5rem); font-weight: 900;">The Chinese Civil War</h1>
-            <p>A National History Day Investigation: The 7 Pivotal Phases (1945–1949)</p>
-            <p style="font-size: 0.95rem; color: #6b7280; margin-top: 0.5rem;">Explore the turning points that shaped modern China's political future</p>
+    <div class="max-w-6xl mx-auto px-6 sm:px-10">
+        <!-- Header with Gradient Background -->
+        <header class="text-center mb-16 site-header py-16 px-8 rounded-2xl bg-gradient-to-br from-blue-50 via-white to-blue-50 border border-blue-100 shadow-xl">
+            <h1 style="font-size: clamp(3rem, 10vw, 5rem); font-weight: 900; background: linear-gradient(135deg, #004c99 0%, #003d7a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">The Chinese Civil War</h1>
+            <p style="font-size: clamp(1.1rem, 3vw, 1.4rem); margin-top: 1rem; color: #004c99; font-weight: 600;">A National History Day Investigation: The 7 Pivotal Phases (1945–1949)</p>
+            <p style="font-size: 1rem; color: #6b7280; margin-top: 0.75rem; max-width: 600px; margin-left: auto; margin-right: auto;">Explore the turning points that shaped modern China's political future</p>
         </header>
 
         <!-- Timeline Section -->
-        <section class="mt-8 space-y-8 relative"> 
+        <section class="mt-16 space-y-6 relative"> 
             <!-- Visible Timeline Line -->
             <div class="timeline-line hidden sm:block"></div>
 
             <!-- Phase 1: Post-War Power Vacuum (1945) -->
-            <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section">
-                <a href="s1_e.html" class="step-link block p-6 sm:p-8 cursor-pointer">
-                    <div class="absolute top-0 left-0 nhd-blue text-white w-10 h-10 flex items-center justify-center rounded-br-lg sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none">
-                        <span class="font-bold text-lg">1</span>
+            <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section hover:shadow-2xl transition-all duration-300">
+                <a href="s1_e.html" class="step-link block p-8 cursor-pointer">
+                    <div class="absolute top-0 left-0 nhd-blue text-white w-12 h-12 flex items-center justify-center rounded-br-2xl sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none font-bold text-xl">
+                        1
                     </div>
-                    <div class="sm:pl-12">
+                    <div class="sm:pl-16">
                         <h2 class="text-2xl font-bold text-gray-800 mt-2 sm:mt-0">Phase 1: Post-War Power Vacuum</h2>
                         <p class="text-lg font-semibold text-nhd-blue mb-2">The Race for Territory (August - December 1945)</p>
-                        <p class="text-gray-600">Examine the initial standoff and the scramble for major cities and critical infrastructure following Japan's surrender. Focus on the pivotal role of U.S. air transport and Soviet arms transfers in Manchuria.</p>
+                        <p class="text-gray-600 leading-relaxed">Examine the initial standoff and the scramble for major cities and critical infrastructure following Japan's surrender. Focus on the pivotal role of U.S. air transport and Soviet arms transfers in Manchuria.</p>
                         <span class="mt-4 inline-block text-sm text-nhd-blue font-semibold hover:underline">View Phase Details →</span>
                     </div>
                 </a>
             </div>
 
             <!-- Phase 2: Full-Scale Civil War Begins (1946) -->
-            <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section">
-                <a href="s2_e.html" class="step-link block p-6 sm:p-8 cursor-pointer">
-                    <div class="absolute top-0 left-0 nhd-blue text-white w-10 h-10 flex items-center justify-center rounded-br-lg sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none">
-                        <span class="font-bold text-lg">2</span>
+            <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section hover:shadow-2xl transition-all duration-300">
+                <a href="s2_e.html" class="step-link block p-8 cursor-pointer">
+                    <div class="absolute top-0 left-0 nhd-blue text-white w-12 h-12 flex items-center justify-center rounded-br-2xl sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none font-bold text-xl">
+                        2
                     </div>
-                    <div class="sm:pl-12">
+                    <div class="sm:pl-16">
                         <h2 class="text-2xl font-bold text-gray-800 mt-2 sm:mt-0">Phase 2: The Nationalist Offensive</h2>
                         <p class="text-lg font-semibold text-nhd-blue mb-2">Initial KMT Push & CCP Retrenchment (1946)</p>
-                        <p class="text-gray-600">Analyze Chiang Kai-shek's full-scale offensive. Focus on the capture of key Communist centers like Yan'an and the Nationalist advantage in firepower, offset by overextension and poor garrison strategy.</p>
+                        <p class="text-gray-600 leading-relaxed">Analyze Chiang Kai-shek's full-scale offensive. Focus on the capture of key Communist centers like Yan'an and the Nationalist advantage in firepower, offset by overextension and poor garrison strategy.</p>
                         <span class="mt-4 inline-block text-sm text-nhd-blue font-semibold hover:underline">View Phase Details →</span>
                     </div>
                 </a>
@@ -202,60 +206,60 @@
             </div>
 
             <!-- Phase 4: Northern & Central Plains Dominance (Early 1948) -->
-            <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section">
-                <a href="s4_e.html" class="step-link block p-6 sm:p-8 cursor-pointer">
-                    <div class="absolute top-0 left-0 nhd-blue text-white w-10 h-10 flex items-center justify-center rounded-br-lg sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none">
-                        <span class="font-bold text-lg">4</span>
+            <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section hover:shadow-2xl transition-all duration-300">
+                <a href="s4_e.html" class="step-link block p-8 cursor-pointer">
+                    <div class="absolute top-0 left-0 nhd-blue text-white w-12 h-12 flex items-center justify-center rounded-br-2xl sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none font-bold text-xl">
+                        4
                     </div>
-                    <div class="sm:pl-12">
+                    <div class="sm:pl-16">
                         <h2 class="text-2xl font-bold text-gray-800 mt-2 sm:mt-0">Phase 4: Consolidation of Base Areas</h2>
                         <p class="text-lg font-semibold text-nhd-blue mb-2">Northern & Central Plains Dominance (Early 1948)</p>
-                        <p class="text-gray-600">Focus on the CCP's successful consolidation of strong base areas, their land reform policies gaining peasant support, and the crippling Nationalist logistical and morale failures across northern and central China.</p>
+                        <p class="text-gray-600 leading-relaxed">Focus on the CCP's successful consolidation of strong base areas, their land reform policies gaining peasant support, and the crippling Nationalist logistical and morale failures across northern and central China.</p>
                         <span class="mt-4 inline-block text-sm text-nhd-blue font-semibold hover:underline">View Phase Details →</span>
                     </div>
                 </a>
             </div>
 
             <!-- Phase 5: The Decisive Campaigns (Late 1948) -->
-            <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section">
-                <a href="s5_e.html" class="step-link block p-6 sm:p-8 cursor-pointer">
-                    <div class="absolute top-0 left-0 nhd-blue text-white w-10 h-10 flex items-center justify-center rounded-br-lg sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none">
-                        <span class="font-bold text-lg">5</span>
+            <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section hover:shadow-2xl transition-all duration-300">
+                <a href="s5_e.html" class="step-link block p-8 cursor-pointer">
+                    <div class="absolute top-0 left-0 nhd-blue text-white w-12 h-12 flex items-center justify-center rounded-br-2xl sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none font-bold text-xl">
+                        5
                     </div>
-                    <div class="sm:pl-12">
+                    <div class="sm:pl-16">
                         <h2 class="text-2xl font-bold text-gray-800 mt-2 sm:mt-0">Phase 5: The Three Great Campaigns</h2>
                         <p class="text-lg font-semibold text-nhd-blue mb-2">The Strategic Blunder (September 1948 - January 1949)</p>
-                        <p class="text-gray-600">The critical period featuring the Liaoshen, Huaihai, and Pingjin campaigns. These massive engagements saw the KMT lose its elite forces and most critical urban centers, guaranteeing the CCP's ultimate victory.</p>
+                        <p class="text-gray-600 leading-relaxed">The critical period featuring the Liaoshen, Huaihai, and Pingjin campaigns. These massive engagements saw the KMT lose its elite forces and most critical urban centers, guaranteeing the CCP's ultimate victory.</p>
                         <span class="mt-4 inline-block text-sm text-nhd-blue font-semibold hover:underline">View Phase Details →</span>
                     </div>
                 </a>
             </div>
 
             <!-- Phase 6: Crossing the Yangtze (Spring 1949) -->
-            <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section">
-                <a href="s6_e.html" class="step-link block p-6 sm:p-8 cursor-pointer">
-                    <div class="absolute top-0 left-0 nhd-blue text-white w-10 h-10 flex items-center justify-center rounded-br-lg sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none">
-                        <span class="font-bold text-lg">6</span>
+            <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section hover:shadow-2xl transition-all duration-300">
+                <a href="s6_e.html" class="step-link block p-8 cursor-pointer">
+                    <div class="absolute top-0 left-0 nhd-blue text-white w-12 h-12 flex items-center justify-center rounded-br-2xl sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none font-bold text-xl">
+                        6
                     </div>
-                    <div class="sm:pl-12">
+                    <div class="sm:pl-16">
                         <h2 class="text-2xl font-bold text-gray-800 mt-2 sm:mt-0">Phase 6: The Yangtze Crossing</h2>
                         <p class="text-lg font-semibold text-nhd-blue mb-2">The Collapse of the South (April - May 1949)</p>
-                        <p class="text-gray-600">Study the PLA's successful crossing of the Yangtze, effectively splitting the Nationalist resistance. Focus on the fall of Nanjing (the KMT capital) and the subsequent capture of major cities like Shanghai.</p>
+                        <p class="text-gray-600 leading-relaxed">Study the PLA's successful crossing of the Yangtze, effectively splitting the Nationalist resistance. Focus on the fall of Nanjing (the KMT capital) and the subsequent capture of major cities like Shanghai.</p>
                         <span class="mt-4 inline-block text-sm text-nhd-blue font-semibold hover:underline">View Phase Details →</span>
                     </div>
                 </a>
             </div>
 
             <!-- Phase 7: Founding of the PRC and Retreat (Late 1949) -->
-            <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section">
-                <a href="s7_e.html" class="step-link block p-6 sm:p-8 cursor-pointer">
-                    <div class="absolute top-0 left-0 nhd-blue text-white w-10 h-10 flex items-center justify-center rounded-br-lg sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none">
-                        <span class="font-bold text-lg">7</span>
+            <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section hover:shadow-2xl transition-all duration-300">
+                <a href="s7_e.html" class="step-link block p-8 cursor-pointer">
+                    <div class="absolute top-0 left-0 nhd-blue text-white w-12 h-12 flex items-center justify-center rounded-br-2xl sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none font-bold text-xl">
+                        7
                     </div>
-                    <div class="sm:pl-12">
+                    <div class="sm:pl-16">
                         <h2 class="text-2xl font-bold text-gray-800 mt-2 sm:mt-0">Phase 7: The Final Outcome</h2>
                         <p class="text-lg font-semibold text-nhd-blue mb-2">Establishment of the PRC and Retreat (June - December 1949)</p>
-                        <p class="text-gray-600">The culmination of the war, marked by Mao Zedong's declaration of the People's Republic of China (PRC) in Beijing and the final, permanent retreat of Chiang Kai-shek and the KMT forces to Taiwan.</p>
+                        <p class="text-gray-600 leading-relaxed">The culmination of the war, marked by Mao Zedong's declaration of the People's Republic of China (PRC) in Beijing and the final, permanent retreat of Chiang Kai-shek and the KMT forces to Taiwan.</p>
                         <span class="mt-4 inline-block text-sm text-nhd-blue font-semibold hover:underline">View Phase Details →</span>
                     </div>
                 </a>
@@ -264,9 +268,9 @@
         </section>
         
         <!-- Comparison Section -->
-        <section class="mt-20 p-8 bg-white rounded-xl shadow-2xl animated-section">
-            <h2 class="text-3xl font-extrabold text-center text-gray-900 mb-8 border-b-2 pb-3 border-nhd-blue">Key Faction Comparison</h2>
-            <p class="text-center text-gray-600 mb-10 max-w-3xl mx-auto">Understanding the Chinese Civil War requires a clear comparison of the two principal antagonists, the KMT and the CCP, across five critical areas.</p>
+        <section class="mt-24 p-10 bg-gradient-to-br from-blue-50 via-white to-indigo-50 rounded-2xl shadow-2xl animated-section border border-blue-100">
+            <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-3 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Key Faction Comparison</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">Understanding the Chinese Civil War requires a clear comparison of the two principal antagonists, the KMT and the CCP, across five critical areas.</p>
 
             <!-- Comparison Grid Container -->
             <div class="space-y-6">
@@ -318,8 +322,9 @@
         </section>
 
         <!-- Footer -->
-        <footer class="mt-12 pt-6 border-t border-gray-200 text-center text-sm text-gray-500 animated-section">
-            <p>&copy; 2067 Chinese Civil War NHD Project.</p>
+        <footer class="mt-16 pt-8 border-t-2 border-blue-100 text-center text-gray-600 animated-section py-8">
+            <p class="font-semibold text-lg">&copy; 2024 Chinese Civil War National History Day Project</p>
+            <p class="text-sm mt-2">A comprehensive historical investigation of the 1945-1949 conflict</p>
         </footer>
     </div>
 
