@@ -20,19 +20,65 @@
     body {
         font-family: 'Inter', sans-serif;
         scroll-behavior: smooth;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
     }
-    /* Style for the step cards */
+    
+    /* Enhanced card styling with glassmorphism */
     .step-card {
-        transition: transform 0.3s, box-shadow 0.3s;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
     }
+    
+    .step-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: left 0.6s;
+        z-index: 1;
+    }
+    
+    .step-card:hover::before {
+        left: 100%;
+    }
+    
     .step-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 25px 50px rgba(0, 76, 153, 0.2);
+        transform: translateY(-12px) scale(1.01);
+        box-shadow: 0 30px 60px rgba(0, 76, 153, 0.3);
     }
+    
     .step-card {
-        background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%) !important;
-        border-radius: 16px;
+        background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%) !important;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 76, 153, 0.1);
     }
+    
+    /* Enhanced number badge */
+    .step-badge-num {
+        transition: all 0.4s ease;
+    }
+    
+    .step-card:hover .step-badge-num {
+        transform: scale(1.15) rotate(5deg);
+        box-shadow: 0 10px 25px rgba(0, 76, 153, 0.4);
+    }
+    
+    /* Enhanced typography */
+    h2 {
+        letter-spacing: -0.5px;
+        font-weight: 800;
+    }
+    
+    p {
+        letter-spacing: 0.3px;
+    }
+    
     /* Custom blue color inspired by NHD branding */
     .nhd-blue {
         background-color: #004c99; /* Darker Blue */
@@ -47,26 +93,76 @@
     .text-ccp-red {
         color: #dc2626; /* Tailwind Red 600 */
     }
-    /* Animation for section reveal */
+    
+    /* Enhanced animation for section reveal */
     .animated-section {
         opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        transform: translateY(30px);
+        transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .animated-section.is-visible {
         opacity: 1;
         transform: translateY(0);
     }
 
-    /* Responsive timeline line */
+    /* Enhanced timeline line with gradient */
     .timeline-line {
         position: absolute;
         left: 50%;
         top: 0;
         bottom: 0;
-        width: 4px;
-        background-color: #949bd8; /* Light gray */
+        width: 3px;
+        background: linear-gradient(180deg, #004c99 0%, #7c3aed 50%, #dc2626 100%);
         transform: translateX(-50%);
+        opacity: 0.6;
+    }
+    
+    /* Pulse effect for timeline */
+    @keyframes pulse-line {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
+    }
+    
+    .timeline-line {
+        animation: pulse-line 3s ease-in-out infinite;
+    }
+    
+    /* Smooth link styling */
+    .step-link {
+        position: relative;
+        z-index: 2;
+    }
+    
+    /* Enhanced phase heading styling */
+    .phase-subtitle {
+        transition: color 0.3s ease;
+    }
+    
+    .step-card:hover .phase-subtitle {
+        color: #0066cc;
+    }
+    
+    /* View details link enhancement */
+    .view-details-link {
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .view-details-link::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #004c99, #0066cc);
+        transition: width 0.3s ease;
+    }
+    
+    .step-card:hover .view-details-link::after {
+        width: 100%;
     }
     @media (min-width: 640px) {
         /* On desktop/tablet, position line to the left of the cards */
@@ -149,10 +245,16 @@
 
     <div class="max-w-6xl mx-auto px-6 sm:px-10">
         <!-- Header with Gradient Background -->
-        <header class="text-center mb-16 site-header py-16 px-8 rounded-2xl bg-gradient-to-br from-blue-50 via-white to-blue-50 border border-blue-100 shadow-xl">
-            <h1 style="font-size: clamp(3rem, 10vw, 5rem); font-weight: 900; background: linear-gradient(135deg, #004c99 0%, #003d7a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">The Chinese Civil War</h1>
-            <p style="font-size: clamp(1.1rem, 3vw, 1.4rem); margin-top: 1rem; color: #004c99; font-weight: 600;">A National History Day Investigation: The 7 Pivotal Phases (1945–1949)</p>
-            <p style="font-size: 1rem; color: #6b7280; margin-top: 0.75rem; max-width: 600px; margin-left: auto; margin-right: auto;">Explore the turning points that shaped modern China's political future</p>
+        <header class="text-center mb-16 site-header py-20 px-8 rounded-3xl bg-gradient-to-br from-white via-blue-50 to-indigo-100 border border-blue-200 shadow-2xl relative overflow-hidden">
+            <!-- Decorative elements -->
+            <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200 to-indigo-200 rounded-full opacity-20 -mr-48 -mt-48"></div>
+            <div class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-blue-100 to-transparent rounded-full opacity-30 -ml-40 -mb-40"></div>
+            
+            <div class="relative z-10">
+                <h1 style="font-size: clamp(3rem, 10vw, 5rem); font-weight: 900; background: linear-gradient(135deg, #004c99 0%, #0066cc 50%, #003d7a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -2px;">The Chinese Civil War</h1>
+                <p style="font-size: clamp(1.1rem, 3vw, 1.4rem); margin-top: 1rem; color: #004c99; font-weight: 700; letter-spacing: 0.5px;">A National History Day Investigation: The 7 Pivotal Phases (1945–1949)</p>
+                <p style="font-size: 1.05rem; color: #666; margin-top: 0.75rem; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">Explore the turning points that shaped modern China's political future</p>
+            </div>
         </header>
 
         <!-- Timeline Section -->
@@ -268,9 +370,13 @@
         </section>
         
         <!-- Comparison Section -->
-        <section class="mt-24 p-10 bg-gradient-to-br from-blue-50 via-white to-indigo-50 rounded-2xl shadow-2xl animated-section border border-blue-100">
-            <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-3 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Key Faction Comparison</h2>
-            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">Understanding the Chinese Civil War requires a clear comparison of the two principal antagonists, the KMT and the CCP, across five critical areas.</p>
+        <section class="mt-24 p-12 bg-gradient-to-br from-white via-blue-50 to-indigo-50 rounded-3xl shadow-2xl animated-section border border-blue-200 relative overflow-hidden">
+            <!-- Decorative gradient circles -->
+            <div class="absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-blue-200 to-transparent rounded-full opacity-20 -mr-36 -mt-36"></div>
+            
+            <div class="relative z-10">
+                <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-3 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Key Faction Comparison</h2>
+                <p class="text-center text-gray-700 mb-12 max-w-3xl mx-auto text-lg leading-relaxed">Understanding the Chinese Civil War requires a clear comparison of the two principal antagonists, the KMT and the CCP, across five critical areas.</p>
 
             <!-- Comparison Grid Container -->
             <div class="space-y-6">
@@ -319,12 +425,18 @@
                 </div>
 
             </div>
+            </div>
         </section>
 
         <!-- Footer -->
-        <footer class="mt-16 pt-8 border-t-2 border-blue-100 text-center text-gray-600 animated-section py-8">
-            <p class="font-semibold text-lg">&copy; 2024 Chinese Civil War National History Day Project</p>
-            <p class="text-sm mt-2">A comprehensive historical investigation of the 1945-1949 conflict</p>
+        <footer class="mt-20 pt-12 border-t-2 border-blue-200 text-center animated-section py-10">
+            <div class="mb-4">
+                <p class="font-extrabold text-2xl bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">&copy; 2024 Chinese Civil War National History Day Project</p>
+                <p class="text-gray-600 mt-2 text-lg">A comprehensive historical investigation of the 1945-1949 conflict</p>
+            </div>
+            <div class="mt-6 pt-6 border-t border-gray-300 text-gray-500 text-sm">
+                <p>Dedicated to understanding the pivotal moments that shaped modern Asia</p>
+            </div>
         </footer>
     </div>
 
