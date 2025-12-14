@@ -75,15 +75,17 @@
     }
     
     .step-card:hover {
-        transform: translateY(-14px) scale(1.02);
-        box-shadow: 0 35px 75px rgba(0, 76, 153, 0.35), 0 0 30px rgba(0, 102, 204, 0.15);
+        transform: translateY(-18px) scale(1.02);
+        box-shadow: 0 40px 90px rgba(0, 76, 153, 0.4), 0 0 40px rgba(0, 102, 204, 0.2);
     }
     
     .step-card {
         background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%) !important;
-        border-radius: 20px;
+        border-radius: 24px;
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(0, 76, 153, 0.12);
+        border: 1px solid rgba(0, 76, 153, 0.15);
+        box-shadow: 0 10px 30px rgba(0, 76, 153, 0.08);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     /* Enhanced number badge */
@@ -97,13 +99,27 @@
     }
     
     /* Enhanced typography */
+    h1 {
+        font-size: 3.5rem;
+        font-weight: 900;
+        letter-spacing: -1px;
+        background: linear-gradient(135deg, #004c99 0%, #0066cc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
     h2 {
         letter-spacing: -0.5px;
         font-weight: 800;
+        font-size: 1.75rem;
+        color: #1a3a52;
     }
     
     p {
         letter-spacing: 0.3px;
+        line-height: 1.8;
+        color: #4a5568;
     }
     
     /* Custom blue color inspired by NHD branding */
@@ -190,6 +206,17 @@
     
     .step-card:hover .view-details-link::after {
         width: 100%;
+    }
+    
+    /* Better button styling */
+    button, .nhd-blue {
+        box-shadow: 0 4px 15px rgba(0, 76, 153, 0.2);
+        transition: all 0.3s ease;
+    }
+    
+    button:hover, .nhd-blue:hover {
+        box-shadow: 0 8px 25px rgba(0, 76, 153, 0.35);
+        transform: translateY(-2px);
     }
     
     /* Main content wrapper */
