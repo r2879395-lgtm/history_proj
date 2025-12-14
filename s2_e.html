@@ -7,10 +7,35 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            position: relative;
         }
+        
+        /* Fixed background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(0, 76, 153, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 102, 204, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
         /* Custom colors matching the main page's NHD theme */
         .nhd-blue { background-color: #004c99; }
         .text-nhd-blue { color: #004c99; }
@@ -20,35 +45,199 @@
         .hover\:bg-nhd-blue\/90:hover { background-color: rgba(0, 76, 153, 0.9); }
 
         .failure-box {
-            border-left: 5px solid #dc2626; /* Red for failure */
-            background-color: #fef2f2; /* Light red background */
+            border-left: 5px solid #dc2626;
+            background-color: #fef2f2;
+        }
+        
+        /* Enhanced card container */
+        .card-container {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 76, 153, 0.15);
+            border-radius: 28px;
+            box-shadow: 0 30px 70px rgba(0, 76, 153, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .card-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 76, 153, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* Back button enhancement */
+        .back-button {
+            transition: all 0.3s ease;
+            color: #004c99;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.25rem;
+            border-radius: 12px;
+            background: rgba(0, 76, 153, 0.05);
+        }
+        
+        .back-button:hover {
+            color: #0066cc;
+            background: rgba(0, 76, 153, 0.12);
+            transform: translateX(-6px);
+            box-shadow: 0 4px 12px rgba(0, 76, 153, 0.15);
+        }
+        
+        /* Heading styles */
+        h1 {
+            background: linear-gradient(135deg, #004c99 0%, #0066cc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1.2;
+            position: relative;
+            z-index: 1;
+        }
+        
+        @media (min-width: 640px) {
+            h1 { font-size: 2.5rem; }
+        }
+        
+        @media (min-width: 768px) {
+            h1 { font-size: 3rem; }
+        }
+        
+        h2 {
+            border-left: 5px solid #004c99;
+            padding-left: 16px;
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1a3a52;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2:hover {
+            border-left-color: #0066cc;
+            padding-left: 20px;
+            transform: translateX(4px);
+        }
+        
+        h3 {
+            color: #004c99;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Content box styling */
+        .content-box {
+            background: linear-gradient(135deg, #e6f0ff 0%, #f0f7ff 100%);
+            border: 2px solid rgba(0, 76, 153, 0.15);
+            border-radius: 18px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s;
+        }
+        
+        .content-box:hover::before {
+            left: 100%;
+        }
+        
+        .content-box:hover {
+            border-color: rgba(0, 76, 153, 0.35);
+            box-shadow: 0 15px 40px rgba(0, 76, 153, 0.15);
+            transform: translateY(-4px);
+        }
+        
+        /* List item styling */
+        ul li {
+            transition: all 0.2s ease;
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 0.5rem;
+        }
+        
+        ul li:hover {
+            color: #004c99;
+            padding-left: 1rem;
+        }
+        
+        ul li strong {
+            color: #004c99;
+            font-weight: 700;
+        }
+        
+        /* Link styling */
+        a {
+            color: #004c99;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        a:hover {
+            color: #0066cc;
+        }
+        
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #004c99, #0066cc);
+            transition: width 0.3s ease;
+        }
+        
+        a:hover::after {
+            width: 100%;
         }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4 sm:p-6">
 
-    <div class="bg-white p-6 sm:p-10 rounded-2xl shadow-xl ring-1 ring-gray-100 w-full max-w-2xl transition-all duration-300">
+    <div class="card-container bg-white p-8 sm:p-12 w-full max-w-2xl">
         
         <a href="index.html" 
-            class="inline-flex items-center text-sm font-bold text-nhd-blue hover:text-blue-800 transition duration-150 group">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 mr-2 group-hover:-translate-x-0.5 transition-transform duration-150">
+            class="back-button inline-flex items-center text-sm font-bold hover:text-blue-800 transition duration-150 group">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform duration-200">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
             </svg>
             Back to Timeline
         </a>
 
-        <div class="mt-6 border-b pb-4 border-gray-200">
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight">KMT Initial Dominance: Chiang's Fatal Strategy (1945–1946)</h1>
-            <p class="mt-2 text-gray-500 text-base">The Nationalists, with huge U.S. help, had all the military advantages at first. But problems inside their government and bad strategic choices set them up for collapse in the first two years.</p>
+        <div class="mt-8 border-b-2 border-nhd-blue/20 pb-6">
+            <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">KMT Initial Dominance: Chiang's Fatal Strategy (1945–1946)</h1>
+            <p class="mt-3 text-gray-600 text-lg leading-relaxed max-w-2xl">The Nationalists, with huge U.S. help, had all the military advantages at first. But problems inside their government and bad strategic choices set them up for collapse in the first two years.</p>
         </div>
 
-        <div class="mt-8 space-y-8">
-            
-            <div class="space-y-4">
-                <h2 class="text-xl font-bold text-gray-800 border-l-4 border-nhd-blue pl-3">Chiang’s Focus on Positional Warfare </h2>
+        <div class="mt-10 space-y-8">
+            <h2 class="text-2xl font-bold text-gray-800">Chiang's Focus on Positional Warfare</h2>
                 
 
-                <div class="p-6 nhd-light-blue rounded-xl border border-nhd-blue/50">
+            <div class="content-box p-7 nhd-light-blue rounded-xl border border-nhd-blue/50">
                     <p class="text-gray-700 leading-relaxed mb-4">
                         <strong>Chiang Kai-shek's</strong> strategy relied on <strong>positional warfare</strong>—seizing and holding major urban centers, industrial zones, and critical rail lines. The aim was to force the smaller Communist forces into set-piece battles where KMT manpower and U.S.-supplied heavy weapons could dominate.
                     </p>
@@ -61,10 +250,9 @@
                 </div>
             </div>
 
-            <div class="space-y-4">
-                <h2 class="text-xl font-bold text-gray-800 border-l-4 border-nhd-blue pl-3">The Fragile Foundation and Internal Failures</h2>
+            <h2 class="text-2xl font-bold text-gray-800">The Fragile Foundation and Internal Failures</h2>
                 
-                <div class="p-6 bg-white rounded-xl border border-gray-200 space-y-4">
+            <div class="content-box p-7 bg-white rounded-xl border border-nhd-blue/30 space-y-4">
                     <div class="p-4 rounded-lg failure-box shadow-sm">
                         <h4 class="font-extrabold text-red-700 text-lg mb-1">Economic Collapse: Crazy Inflation</h4>
                         <p class="text-gray-800">
@@ -81,9 +269,8 @@
                 </div>
             </div>
 
-            <div class="space-y-4">
-                <h2 class="text-xl font-bold text-gray-800 border-l-4 border-nhd-blue pl-3">Massive U.S. Lift, Thin KMT Control</h2>
-                <div class="p-6 nhd-light-blue rounded-xl border border-nhd-blue/50 space-y-3">
+            <h2 class="text-2xl font-bold text-gray-800">Massive U.S. Lift, Thin KMT Control</h2>
+            <div class="content-box p-7 nhd-light-blue rounded-xl border border-nhd-blue/50 space-y-3">
                     <p class="text-gray-700 leading-relaxed">
                         From autumn 1945 through mid-1946, U.S. transport defined the Nationalists’ early advantage: more than <strong>500,000 KMT troops</strong> and heavy equipment were flown or shipped to North China and Manchuria. Yet lift speed outpaced political control—cities were occupied, but surrounding counties stayed CCP-aligned.
                     </p>
@@ -95,9 +282,8 @@
                 </div>
             </div>
 
-            <div class="space-y-4">
-                <h2 class="text-xl font-bold text-gray-800 border-l-4 border-nhd-blue pl-3">Manchuria: Spread Too Thin and Supply Problems</h2>
-                <div class="p-6 bg-white rounded-xl border border-gray-200 space-y-3">
+            <h2 class="text-2xl font-bold text-gray-800">Manchuria: Spread Too Thin and Supply Problems</h2>
+            <div class="content-box p-7 bg-white rounded-xl border border-nhd-blue/30 space-y-3">
                     <p class="text-gray-700 leading-relaxed">
                         By late 1946, Nationalist forces held major Manchurian cities but were losing strength along railroad lines. Winter supply runs stopped working; fuel and ammunition shortages hurt their armored trains and artillery, while Communist units went around strongpoints to cut telegraph and rail lines.
                     </p>
