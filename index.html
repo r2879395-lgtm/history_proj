@@ -6,15 +6,14 @@
     <title>The Chinese Revolution</title>
     <link rel="stylesheet" href="css/style.css">
     
-    <!-- Primary favicon (tab icon) -->
 <link rel="icon" href="favicon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
 <link rel="shortcut icon" href="favicon.png">
 
-<!-- Load Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
-<!-- Load Inter Font --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 <style>
     /* Custom styles to ensure smooth scrolling and font application */
     body {
@@ -320,7 +319,7 @@
         let auth;
         let userId = null;
 
-        // --- Helper: Custom Message Box (replacing alert/confirm) ---
+
         function showCustomMessage(message, title = 'Notification') {
             const container = document.createElement('div');
             container.className = 'fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50 p-4';
@@ -338,7 +337,6 @@
 
         
 
-        // --- Document Ready / Animation Logic (Intersection Observer) ---
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll(".animated-section");
 
@@ -376,7 +374,6 @@
         });
     </script>
 
-    <!-- Top Navigation (Full Width) -->
     <nav class="top-nav flex items-center justify-between py-4 px-6 sm:px-10">
         <span class="text-sm sm:text-base font-extrabold text-nhd-blue tracking-tight">Chinese Civil War (1945–1949)</span>
         <div class="flex items-center space-x-4 sm:space-x-6 text-sm sm:text-base">
@@ -389,9 +386,7 @@
 
     <div class="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 main-wrapper">
 
-        <!-- Header with Gradient Background -->
         <header class="text-center mb-16 site-header py-20 px-8 rounded-3xl bg-gradient-to-br from-white via-blue-50 to-indigo-100 border border-blue-200 shadow-2xl relative overflow-hidden">
-            <!-- Decorative elements -->
             <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200 to-indigo-200 rounded-full opacity-20 -mr-48 -mt-48"></div>
             <div class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-blue-100 to-transparent rounded-full opacity-30 -ml-40 -mb-40"></div>
             
@@ -403,12 +398,9 @@
             </div>
         </header>
 
-        <!-- Timeline Section -->
-        <section id="timeline" class="mt-16 space-y-6 relative"> 
-            <!-- Visible Timeline Line -->
+        <section id="timeline" class="mt-16 space-y-6 relative">
             <div class="timeline-line hidden sm:block"></div>
 
-            <!-- Phase 1: Post-War Power Vacuum (1945) -->
             <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section hover:shadow-2xl transition-all duration-300">
                 <a href="s1_e.html" class="step-link block p-8 cursor-pointer">
                     <div class="absolute top-0 left-0 nhd-blue text-white w-12 h-12 flex items-center justify-center rounded-br-2xl sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none font-bold text-xl">
@@ -423,7 +415,6 @@
                 </a>
             </div>
 
-            <!-- Phase 2: Full-Scale Civil War Begins (1946) -->
             <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section hover:shadow-2xl transition-all duration-300">
                 <a href="s2_e.html" class="step-link block p-8 cursor-pointer">
                     <div class="absolute top-0 left-0 nhd-blue text-white w-12 h-12 flex items-center justify-center rounded-br-2xl sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none font-bold text-xl">
@@ -438,7 +429,6 @@
                 </a>
             </div>
 
-            <!-- Phase 3: The Communist Counter-Offensive (1947) -->
             <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section">
                 <a href="s3_e.html" class="step-link block p-6 sm:p-8 cursor-pointer">
                     <div class="absolute top-0 left-0 nhd-blue text-white w-10 h-10 flex items-center justify-center rounded-br-lg sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none">
@@ -453,7 +443,6 @@
                 </a>
             </div>
 
-            <!-- Phase 4: Northern & Central Plains Dominance (Early 1948) -->
             <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section hover:shadow-2xl transition-all duration-300">
                 <a href="s4_e.html" class="step-link block p-8 cursor-pointer">
                     <div class="absolute top-0 left-0 nhd-blue text-white w-12 h-12 flex items-center justify-center rounded-br-2xl sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none font-bold text-xl">
@@ -468,7 +457,6 @@
                 </a>
             </div>
 
-            <!-- Phase 5: The Decisive Campaigns (Late 1948) -->
             <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section hover:shadow-2xl transition-all duration-300">
                 <a href="s5_e.html" class="step-link block p-8 cursor-pointer">
                     <div class="absolute top-0 left-0 nhd-blue text-white w-12 h-12 flex items-center justify-center rounded-br-2xl sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none font-bold text-xl">
@@ -483,7 +471,6 @@
                 </a>
             </div>
 
-            <!-- Phase 6: Crossing the Yangtze (Spring 1949) -->
             <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section hover:shadow-2xl transition-all duration-300">
                 <a href="s6_e.html" class="step-link block p-8 cursor-pointer">
                     <div class="absolute top-0 left-0 nhd-blue text-white w-12 h-12 flex items-center justify-center rounded-br-2xl sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none font-bold text-xl">
@@ -498,7 +485,6 @@
                 </a>
             </div>
 
-            <!-- Phase 7: Founding of the PRC and Retreat (Late 1949) -->
             <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section hover:shadow-2xl transition-all duration-300">
                 <a href="s7_e.html" class="step-link block p-8 cursor-pointer">
                     <div class="absolute top-0 left-0 nhd-blue text-white w-12 h-12 flex items-center justify-center rounded-br-2xl sm:rounded-tl-none sm:rounded-bl-xl sm:rounded-tr-none font-bold text-xl">
@@ -515,55 +501,45 @@
 
         </section>
         
-        <!-- Comparison Section -->
         <section id="comparison" class="mt-24 p-12 bg-gradient-to-br from-white via-blue-50 to-indigo-50 rounded-3xl shadow-2xl animated-section border border-blue-200 relative overflow-hidden">
-            <!-- Decorative gradient circles -->
             <div class="absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-blue-200 to-transparent rounded-full opacity-20 -mr-36 -mt-36"></div>
             
             <div class="relative z-10">
                 <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-3 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Key Faction Comparison</h2>
                 <p class="text-center text-gray-700 mb-12 max-w-3xl mx-auto text-lg leading-relaxed">Understanding the Chinese Civil War requires a clear comparison of the two principal antagonists, the KMT and the CCP, across five critical areas.</p>
 
-            <!-- Comparison Grid Container -->
             <div class="space-y-6">
 
-                <!-- Header Row (Hidden on Mobile) -->
                 <div class="hidden sm:grid grid-cols-3 gap-4 border-b-2 border-gray-200 pb-3 font-bold text-lg text-center">
                     <div class="text-left text-gray-800">Criteria</div>
                     <div class="text-nhd-blue">Kuomintang (KMT) / Nationalists</div>
                     <div class="text-ccp-red">CCP / Communists</div>
                 </div>
 
-                <!-- Comparison Rows -->
-                <!-- Row 1: Leadership -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 border-b border-gray-100 py-3">
                     <div class="font-bold text-gray-800 sm:text-left border-b border-gray-200 sm:border-0 pb-2 sm:pb-0">Leadership</div>
                     <div class="text-center sm:text-left text-nhd-blue">Chiang Kai-shek</div>
                     <div class="text-center sm:text-left text-ccp-red">Mao Zedong</div>
                 </div>
 
-                <!-- Row 2: Ideology -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 border-b border-gray-100 py-3">
                     <div class="font-bold text-gray-800 sm:text-left border-b border-gray-200 sm:border-0 pb-2 sm:pb-0">Ideology</div>
                     <div class="text-center sm:text-left text-nhd-blue">Nationalism, Confucianism, Anti-Communism, Republicanism.</div>
                     <div class="text-center sm:text-left text-ccp-red">Marxism-Leninism adapted to a rural Chinese context (Maoism).</div>
                 </div>
                 
-                <!-- Row 3: Primary Support Base -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 border-b border-gray-100 py-3">
                     <div class="font-bold text-gray-800 sm:text-left border-b border-gray-200 sm:border-0 pb-2 sm:pb-0">Primary Support Base</div>
                     <div class="text-center sm:text-left text-nhd-blue">Urban elites, merchants, conservative landowners, and the bureaucratic class.</div>
                     <div class="text-center sm:text-left text-ccp-red">Peasants (via land reform), rural workers, and intellectuals disillusioned with the KMT.</div>
                 </div>
 
-                <!-- Row 4: Military Strategy -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 border-b border-gray-100 py-3">
                     <div class="font-bold text-gray-800 sm:text-left border-b border-gray-200 sm:border-0 pb-2 sm:pb-0">Military Strategy</div>
                     <div class="text-center sm:text-left text-nhd-blue">Conventional warfare, relying on fixed defenses, large garrisons, and superior US equipment.</div>
                     <div class="text-center sm:text-left text-ccp-red">Guerrilla warfare, high mobility, and mass popular support; gradually transitioning to large-scale engagements.</div>
                 </div>
 
-                <!-- Row 5: Foreign Support -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-3">
                     <div class="font-bold text-gray-800 sm:text-left border-b border-gray-200 sm:border-0 pb-2 sm:pb-0">Foreign Support</div>
                     <div class="text-center sm:text-left text-nhd-blue">United States (extensive military and financial aid).</div>
@@ -574,7 +550,6 @@
             </div>
         </section>
 
-        <!-- Footer -->
         <footer class="mt-20 pt-12 border-t-2 border-blue-200 text-center animated-section py-10">
             <div class="mb-4">
                 <p class="font-extrabold text-2xl bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">&copy; 2024 Chinese Civil War National History Day Project</p>

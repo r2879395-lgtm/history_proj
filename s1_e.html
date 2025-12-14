@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post-War Standoff: The Race for Territory (1945)</title>
-    <!-- Favicon -->
     <link rel="icon" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
     <link rel="shortcut icon" href="favicon.png">
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
@@ -163,16 +161,12 @@
         }
     </style>
 </head>
-<!-- Use flex to center the content vertically and horizontally -->
 <body class="min-h-screen flex items-center justify-center p-4 sm:p-6">
 
-    <!-- Card Container: Max width adjusted for slightly larger screens while maintaining mobile friendliness -->
     <div class="card-container bg-white p-8 sm:p-12 w-full max-w-2xl">
         
-        <!-- Go Back Button -->
         <a href="index.html" 
             class="back-button inline-flex items-center text-sm font-bold hover:text-blue-800 transition duration-150 group">
-            <!-- Icon for going back (inline SVG) -->
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform duration-200">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
             </svg>
@@ -187,7 +181,6 @@
         <div class="mt-10 space-y-8">
             <h2 class="text-2xl font-bold text-gray-800">The Power Vacuum</h2>
             
-            <!-- Detailed Content Area -->
             <div class="content-box p-7 nhd-light-blue rounded-xl border border-nhd-blue/50">
                 <h3 class="text-lg font-semibold text-nhd-blue mb-3">The Big Prize: Manchuria</h3>
                 <p class="text-gray-700 leading-relaxed">
@@ -201,7 +194,6 @@
                 </ul>
             </div>
 
-            <!-- Logistics and rail control -->
             <div class="content-box p-7 bg-white rounded-xl border border-nhd-blue/30">
                 <h3 class="text-lg font-semibold text-nhd-blue mb-3">Railroads, Ports, and Airlifts (Fall 1945)</h3>
                 <p class="text-gray-700 leading-relaxed">
@@ -214,7 +206,6 @@
                 </ul>
             </div>
 
-            <!-- Foreign actors and Manchurian arsenals -->
             <div class="content-box p-7 nhd-light-blue rounded-xl border border-nhd-blue/50">
                 <h3 class="text-lg font-semibold text-nhd-blue mb-3">Soviet Withdrawal and Captured Arsenals</h3>
                 <p class="text-gray-700 leading-relaxed">
@@ -227,7 +218,6 @@
                 </ul>
             </div>
 
-            <!-- Why negotiations failed -->
             <div class="content-box p-7 bg-white rounded-xl border border-nhd-blue/30">
                 <h3 class="text-lg font-semibold text-nhd-blue mb-3">Ceasefire, Talks, and Breakdown</h3>
                 <p class="text-gray-700 leading-relaxed">
@@ -240,7 +230,6 @@
                 </ul>
             </div>
             
-            <!-- Interactive Element: API-powered Historical Search -->
             <div class="pt-4 border-t border-gray-200">
                 <label for="prompt-input" class="block text-lg font-bold text-gray-800 mb-2">Dive Deeper: Research a Historical Term</label>
                 <p class="text-sm text-gray-600 mb-3">Ask about specific events or figures (e.g., "What was the Marshall Mission?" or "Describe the Soviet role in Manchuria").</p>
@@ -255,7 +244,6 @@
                     </svg>
                     AI Research Result
                 </h3>
-                <!-- Results will be displayed here -->
             </div>
             
             <div id="loading-indicator" class="hidden flex justify-center items-center py-4">
@@ -263,7 +251,6 @@
                 <span class="ml-3 text-nhd-blue font-medium">Generating Answer...</span>
             </div>
 
-            <!-- Search Button -->
             <button id="search-button"
                 class="w-full nhd-blue hover:bg-nhd-blue/90 text-white font-bold py-3 px-4 rounded-xl transition duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-2"
                 onclick="fetchHistoricalData()">
@@ -274,7 +261,6 @@
         </div>
     </div>
     
-    <!-- Custom Modal/Message Box for no-alert rule -->
     <div id="message-box" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden items-center justify-center p-4 z-50">
         <div class="bg-white p-6 rounded-xl shadow-2xl max-w-sm w-full">
             <h3 class="text-xl font-bold text-nhd-blue mb-3">Notice</h3>
