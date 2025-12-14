@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary - Chinese Civil War</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Primary favicon -->
+    <link rel="icon" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.png">
+
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .nhd-blue {
+            background-color: #004c99;
+        }
+        
+        .text-nhd-blue {
+            color: #004c99;
+        }
+        
+        .summary-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 76, 153, 0.12);
+            transition: all 0.3s ease;
+        }
+        
+        .summary-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 76, 153, 0.2);
+        }
+        
+        .section-title {
+            color: #004c99;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        
+        .impact-badge {
+            background: linear-gradient(135deg, #004c99 0%, #0066cc 100%);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            color: white;
+            font-weight: 700;
+            font-size: 0.875rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            background: #004c99;
+            border-radius: 50%;
+            position: absolute;
+            left: -6px;
+            top: 8px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 3px solid #004c99;
+            padding-bottom: 1.5rem;
+        }
+        
+        .timeline-item:last-child {
+            border-left: 3px solid transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6 sm:px-10 py-12">
+        <!-- Back Navigation -->
+        <a href="index.html" class="inline-flex items-center text-nhd-blue font-semibold mb-8 hover:underline transition">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Back to Timeline
+        </a>
+
+        <!-- Main Header -->
+        <header class="text-center mb-16 py-16 px-8 rounded-3xl bg-gradient-to-br from-white via-blue-50 to-indigo-100 border border-blue-200 shadow-2xl">
+            <h1 class="text-5xl sm:text-6xl font-black text-nhd-blue mb-4">War Summary</h1>
+            <p class="text-xl text-gray-700 font-semibold">The Outcome and Legacy of the Chinese Civil War (1945–1949)</p>
+        </header>
+
+        <!-- Overview Section -->
+        <section class="summary-card p-8 mb-8 shadow-xl">
+            <h2 class="section-title text-3xl mb-6">The Verdict: Communist Victory</h2>
+            <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                On October 1, 1949, Mao Zedong stood atop Tiananmen Gate and proclaimed the establishment of the People's Republic of China. The Chinese Civil War, which had raged with intermittent intensity since 1927 and resumed full-scale in 1945, concluded with a decisive Communist victory. Chiang Kai-shek and remnants of the Nationalist government fled to Taiwan, where they established a rival government that persists to this day.
+            </p>
+            <p class="text-gray-700 text-lg leading-relaxed">
+                The outcome reshaped East Asian geopolitics, created the foundation for the Cold War in Asia, and set China on a revolutionary path that would affect a quarter of humanity for generations to come.
+            </p>
+        </section>
+
+        <!-- Key Factors Section -->
+        <section class="summary-card p-8 mb-8 shadow-xl">
+            <h2 class="section-title text-3xl mb-6">Why the Communists Won</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <span class="impact-badge">Military Strategy</span>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Superior Tactics and Adaptability</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        The PLA's shift from guerrilla warfare to mobile and eventually positional warfare demonstrated strategic flexibility. Lin Biao's campaigns in Manchuria and the decisive Huai-Hai Campaign showcased superior logistics, battlefield intelligence, and coordination compared to Nationalist forces.
+                    </p>
+                </div>
+
+                <div>
+                    <span class="impact-badge">Popular Support</span>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Land Reform and Peasant Mobilization</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Communist land redistribution programs won the loyalty of China's rural majority. While the KMT relied on landlords and urban elites, the CCP built grassroots support through promises—and delivery—of land to the peasants, creating a vast recruitment and supply base.
+                    </p>
+                </div>
+
+                <div>
+                    <span class="impact-badge">Nationalist Collapse</span>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Corruption, Inflation, and Loss of Morale</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Hyperinflation destroyed the urban middle class's confidence in KMT governance. Corruption among Nationalist officials alienated potential supporters. Military overextension in attempting to hold Manchuria while defending central China stretched forces fatally thin.
+                    </p>
+                </div>
+
+                <div>
+                    <span class="impact-badge">Soviet & U.S. Roles</span>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">International Factors</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Soviet transfer of Japanese weapons to the CCP in Manchuria and the cessation of major U.S. military aid to the KMT in 1948 shifted the balance. While American support never completely ceased, Washington's ambivalence contrasted with Moscow's strategic assistance to the Communists.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Immediate Consequences Section -->
+        <section class="summary-card p-8 mb-8 shadow-xl">
+            <h2 class="section-title text-3xl mb-6">Immediate Consequences (1949–1950)</h2>
+            
+            <div class="space-y-4">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3 class="text-lg font-bold text-gray-800">Establishment of the PRC</h3>
+                    <p class="text-gray-700">
+                        The People's Republic of China was founded on October 1, 1949, with Beijing as its capital. The CCP controlled the mainland and began consolidating power through land reform, nationalization, and political campaigns.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3 class="text-lg font-bold text-gray-800">Taiwan and the "Two Chinas"</h3>
+                    <p class="text-gray-700">
+                        The KMT government retreated to Taiwan, maintaining the claim to be the legitimate government of all China. This division created the enduring "Taiwan question" that remains unresolved today.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3 class="text-lg font-bold text-gray-800">Cold War Alignment</h3>
+                    <p class="text-gray-700">
+                        China aligned with the Soviet Union through the 1950 Sino-Soviet Treaty of Friendship. The "loss of China" became a defining issue in American politics and intensified Cold War tensions in Asia.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3 class="text-lg font-bold text-gray-800">Korean War Catalyst</h3>
+                    <p class="text-gray-700">
+                        Within a year, China intervened in the Korean War (1950), cementing its role as a major Communist power and bringing it into direct conflict with U.S. forces.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Long-Term Impact Section -->
+        <section class="summary-card p-8 mb-8 shadow-xl">
+            <h2 class="section-title text-3xl mb-6">Long-Term Impact and Legacy</h2>
+            
+            <div class="grid sm:grid-cols-2 gap-6">
+                <div class="p-6 bg-blue-50 rounded-xl border border-blue-200">
+                    <h3 class="text-xl font-bold text-nhd-blue mb-3">🌏 Geopolitical Shift</h3>
+                    <p class="text-gray-700">
+                        The Communist victory created the world's most populous socialist state and shifted the global balance of power. It inspired revolutionary movements across Asia, Africa, and Latin America.
+                    </p>
+                </div>
+
+                <div class="p-6 bg-blue-50 rounded-xl border border-blue-200">
+                    <h3 class="text-xl font-bold text-nhd-blue mb-3">🏭 Socialist Transformation</h3>
+                    <p class="text-gray-700">
+                        China underwent radical economic and social transformation including collectivization, the Great Leap Forward, and the Cultural Revolution—with profound human costs.
+                    </p>
+                </div>
+
+                <div class="p-6 bg-blue-50 rounded-xl border border-blue-200">
+                    <h3 class="text-xl font-bold text-nhd-blue mb-3">🇹🇼 Cross-Strait Relations</h3>
+                    <p class="text-gray-700">
+                        The unresolved status of Taiwan remains one of the world's most sensitive flashpoints, with implications for regional security and U.S.-China relations.
+                    </p>
+                </div>
+
+                <div class="p-6 bg-blue-50 rounded-xl border border-blue-200">
+                    <h3 class="text-xl font-bold text-nhd-blue mb-3">📚 Historical Memory</h3>
+                    <p class="text-gray-700">
+                        The civil war's legacy shapes Chinese national identity, Communist Party legitimacy, and competing historical narratives between the PRC and Taiwan.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion Section -->
+        <section class="summary-card p-8 mb-8 shadow-xl">
+            <h2 class="section-title text-3xl mb-6">Historical Significance</h2>
+            <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                The Chinese Civil War stands as one of the 20th century's most consequential conflicts. It determined not only the fate of the world's most populous nation but also fundamentally altered the trajectory of the Cold War, decolonization movements, and Asian regional order.
+            </p>
+            <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                The war's seven pivotal phases—from the post-war scramble for Japanese-held territory to the final collapse of Nationalist resistance—illustrate how military strategy, popular mobilization, economic policy, and international factors combined to produce a revolutionary transformation.
+            </p>
+            <p class="text-gray-700 text-lg leading-relaxed">
+                Understanding these turning points helps explain why China took the path it did and why the echoes of this conflict still reverberate in contemporary East Asian politics, cross-strait relations, and China's place in the world order.
+            </p>
+        </section>
+
+        <!-- Back to Home -->
+        <div class="text-center mt-12">
+            <a href="index.html" class="inline-block nhd-blue text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:opacity-90 transition">
+                Return to Timeline
+            </a>
+        </div>
+    </div>
+</body>
+</html>
