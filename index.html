@@ -197,6 +197,27 @@
         position: relative;
         z-index: 1;
     }
+
+    /* Top navigation bar */
+    .top-nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.9);
+        border-bottom: 1px solid rgba(0, 76, 153, 0.08);
+    }
+
+    .top-nav a {
+        color: #004c99;
+        font-weight: 700;
+        transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .top-nav a:hover {
+        color: #0066cc;
+        transform: translateY(-1px);
+    }
     
     /* Phase number styling */
     .phase-number {
@@ -295,6 +316,16 @@
     </script>
 
     <div class="max-w-6xl mx-auto px-6 sm:px-10 main-wrapper">
+        <!-- Top Navigation -->
+        <nav class="top-nav flex items-center justify-between py-3 px-2 sm:px-0">
+            <span class="text-sm sm:text-base font-extrabold text-nhd-blue tracking-tight">Chinese Civil War (1945–1949)</span>
+            <div class="flex items-center space-x-4 sm:space-x-6 text-sm sm:text-base">
+                <a href="#timeline">Timeline</a>
+                <a href="#comparison">Comparison</a>
+                <a href="sources.html">Sources</a>
+            </div>
+        </nav>
+
         <!-- Header with Gradient Background -->
         <header class="text-center mb-16 site-header py-20 px-8 rounded-3xl bg-gradient-to-br from-white via-blue-50 to-indigo-100 border border-blue-200 shadow-2xl relative overflow-hidden">
             <!-- Decorative elements -->
@@ -310,7 +341,7 @@
         </header>
 
         <!-- Timeline Section -->
-        <section class="mt-16 space-y-6 relative"> 
+        <section id="timeline" class="mt-16 space-y-6 relative"> 
             <!-- Visible Timeline Line -->
             <div class="timeline-line hidden sm:block"></div>
 
@@ -422,7 +453,7 @@
         </section>
         
         <!-- Comparison Section -->
-        <section class="mt-24 p-12 bg-gradient-to-br from-white via-blue-50 to-indigo-50 rounded-3xl shadow-2xl animated-section border border-blue-200 relative overflow-hidden">
+        <section id="comparison" class="mt-24 p-12 bg-gradient-to-br from-white via-blue-50 to-indigo-50 rounded-3xl shadow-2xl animated-section border border-blue-200 relative overflow-hidden">
             <!-- Decorative gradient circles -->
             <div class="absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-blue-200 to-transparent rounded-full opacity-20 -mr-36 -mt-36"></div>
             
