@@ -75,7 +75,7 @@
     
     .step-card:hover {
         transform: translateY(-18px) scale(1.02);
-        box-shadow: 0 40px 90px rgba(0, 76, 153, 0.4), 0 0 40px rgba(0, 102, 204, 0.2);
+        box-shadow: 0 30px 70px rgba(0, 76, 153, 0.3);
     }
     
     .step-card {
@@ -83,6 +83,7 @@
         border-radius: 24px;
         backdrop-filter: blur(10px);
         border: 1px solid rgba(0, 76, 153, 0.15);
+        border-top: 3px solid #004c99;
         box-shadow: 0 10px 30px rgba(0, 76, 153, 0.08);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         overflow: hidden;
@@ -144,10 +145,11 @@
     
     p {
         letter-spacing: 0.3px;
-        line-height: 1.8;
-        color: #4a5568;
+        line-height: 1.7;
+        color: #374151;
         word-wrap: break-word;
         overflow-wrap: break-word;
+        font-size: 1rem;
     }
     
     /* Custom blue color inspired by NHD branding */
@@ -202,6 +204,55 @@
     .step-link {
         position: relative;
         z-index: 2;
+        padding-left: 1rem;
+    }
+    
+    .step-link::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(180deg, #0066cc 0%, #004c99 100%);
+        border-radius: 2px;
+    }
+    
+    /* Accessibility: focus states */
+    a:focus-visible {
+        outline: 2px solid #0066cc;
+        outline-offset: 2px;
+    }
+    
+    button:focus-visible {
+        outline: 2px solid #0066cc;
+        outline-offset: 2px;
+    }
+    
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        white-space: nowrap;
+        border-width: 0;
+    }
+    
+    .sr-only:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0.5rem;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        background: #004c99;
+        color: white;
+        border-radius: 4px;
     }
     
     /* Enhanced phase heading styling */
@@ -374,19 +425,20 @@
         });
     </script>
 
-    <nav class="top-nav flex items-center justify-between py-4 px-6 sm:px-10">
+    <nav class="top-nav flex items-center justify-between py-4 px-4 sm:px-6 md:px-8" aria-label="Main navigation">
         <span class="text-sm sm:text-base font-extrabold text-nhd-blue tracking-tight">Chinese Civil War (1945–1949)</span>
         <div class="flex items-center space-x-4 sm:space-x-6 text-sm sm:text-base">
-            <a href="#timeline">Timeline</a>
-            <a href="#comparison">Comparison</a>
-            <a href="summary.html">Summary</a>
-            <a href="sources.html">Sources</a>
+            <a href="#timeline" class="hover:text-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nhd-blue">Timeline</a>
+            <a href="#comparison" class="hover:text-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nhd-blue">Comparison</a>
+            <a href="summary.html" class="hover:text-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nhd-blue">Summary</a>
+            <a href="sources.html" class="hover:text-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nhd-blue">Sources</a>
         </div>
     </nav>
 
-    <div class="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 main-wrapper">
+    <div class="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 main-wrapper" role="main">
+        <a href="#main-content" class="sr-only focus:not-sr-only focus:block focus:p-2 focus:bg-nhd-blue focus:text-white focus:rounded focus:outline-2 focus:outline-offset-2 focus:outline-nhd-blue">Skip to main content</a>
 
-        <header class="text-center mb-16 site-header py-20 px-8 rounded-3xl bg-gradient-to-br from-white via-blue-50 to-indigo-100 border border-blue-200 shadow-2xl relative overflow-hidden">
+        <header class="text-center mb-12 site-header py-16 px-6 sm:px-8 md:px-10 rounded-3xl bg-gradient-to-br from-white via-blue-50 to-indigo-100 border border-blue-200 shadow-xl relative overflow-hidden" aria-label="Site header">
             <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200 to-indigo-200 rounded-full opacity-20 -mr-48 -mt-48"></div>
             <div class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-blue-100 to-transparent rounded-full opacity-30 -ml-40 -mb-40"></div>
             
@@ -398,7 +450,7 @@
             </div>
         </header>
 
-        <section id="timeline" class="mt-16 space-y-6 relative">
+        <section id="main-content" id="timeline" class="mt-12 space-y-6 relative">
             <div class="timeline-line hidden sm:block"></div>
 
             <div class="step-card bg-white rounded-xl shadow-lg relative overflow-hidden border-l-4 border-nhd-blue animated-section hover:shadow-2xl transition-all duration-300">
@@ -501,11 +553,11 @@
 
         </section>
         
-        <section id="comparison" class="mt-24 p-12 bg-gradient-to-br from-white via-blue-50 to-indigo-50 rounded-3xl shadow-2xl animated-section border border-blue-200 relative overflow-hidden">
+        <section id="comparison" class="mt-16 p-8 sm:p-10 md:p-12 bg-gradient-to-br from-white via-blue-50 to-indigo-50 rounded-3xl shadow-xl animated-section border border-blue-200 relative overflow-hidden" aria-labelledby="comparison-title">
             <div class="absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-blue-200 to-transparent rounded-full opacity-20 -mr-36 -mt-36"></div>
             
             <div class="relative z-10">
-                <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-3 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Key Faction Comparison</h2>
+                <h2 id="comparison-title" class="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-3 border-0 pb-0 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Key Faction Comparison</h2>
                 <p class="text-center text-gray-700 mb-12 max-w-3xl mx-auto text-lg leading-relaxed">Understanding the Chinese Civil War requires a clear comparison of the two principal antagonists, the KMT and the CCP, across five critical areas.</p>
 
             <div class="space-y-6">
@@ -550,7 +602,7 @@
             </div>
         </section>
 
-        <footer class="mt-20 pt-12 border-t-2 border-blue-200 text-center animated-section py-10">
+        <footer class="mt-16 pt-12 border-t-2 border-blue-200 text-center animated-section py-8" role="contentinfo">
             <div class="mb-4">
                 <p class="font-extrabold text-2xl bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">&copy; 2024 Chinese Civil War National History Day Project</p>
                 <p class="text-gray-600 mt-2 text-lg">A comprehensive historical investigation of the 1945-1949 conflict</p>
