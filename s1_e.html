@@ -392,11 +392,10 @@
             searchButton.disabled = true;
             searchButton.innerHTML = '<div class="spinner !border-l-white"></div><span class="ml-3">Searching...</span>';
 
-            const systemPrompt = "You are a specialized history tutor focused on the Chinese Civil War (1945-1949). Provide a concise, clear, and highly focused response to the user's query, ensuring your answer is directly relevant to the historical context of the conflict and uses the provided search results for grounding. The response must be a single, short paragraph.";
+            const systemPrompt = "You are a specialized history tutor focused on the Chinese Civil War (1945-1949). Provide a concise, clear, and highly focused response to the user's query, ensuring your answer is directly relevant to the historical context of the conflict. The response must be a single, short paragraph.";
 
             const payload = {
                 contents: [{ parts: [{ text: prompt }] }],
-                tools: [{ "google_search": {} }],
                 systemInstruction: { parts: [{ text: systemPrompt }] },
             };
 
