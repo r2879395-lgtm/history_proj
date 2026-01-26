@@ -414,7 +414,17 @@
                 }
 
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    // Try to read detailed error from the API response body
+                    let errorMessage = `HTTP error! status: ${response.status}`;
+                    try {
+                        const errorData = await response.json();
+                        if (errorData && errorData.error && errorData.error.message) {
+                            errorMessage += ` - ${errorData.error.message}`;
+                        }
+                    } catch (e) {
+                        // Ignore JSON parsing errors and fall back to basic message
+                    }
+                    throw new Error(errorMessage);
                 }
 
                 const result = await response.json();
