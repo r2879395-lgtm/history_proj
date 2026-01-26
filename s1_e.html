@@ -360,10 +360,14 @@
         </div>
     </div>
 
+    <script src="js/local-config.js"></script>
     <script>
         // NOTE: The __app_id, __firebase_config, and __initial_auth_token are provided automatically by the environment.
-        const apiKey = "AIzaSyBcXBwA8dpsfOvqeZ1gLUGVHA-FPoZm1WI"; // Canvas will provide this key in runtime
-        const apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=" + apiKey;
+        // API key is provided locally via js/local-config.js and is NOT committed to Git.
+        const apiKey = window.LOCAL_GEMINI_API_KEY || null;
+        const apiUrl = apiKey
+            ? "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=" + apiKey
+            : null;
 
         // Custom message box function to comply with the no-alert rule
         function showCustomMessage(message, title = 'Notice') {
@@ -383,6 +387,18 @@
 
             if (!prompt) {
                 showCustomMessage('Please enter a term or question to search.', 'Input Required');
+                return;
+            }
+
+            if (!apiKey || !apiUrl) {
+                showCustomMessage('No API key is configured on this computer. Please add your key to js/local-config.js (this file stays local and is not committed).', 'API Key Missing');
+                // Reset button/loading state in case this was triggered mid-flow
+                loadingIndicator.classList.add('hidden');
+                searchButton.disabled = false;
+                searchButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                                          </svg>
+                                          <span>Run Historical Search</span>`;
                 return;
             }
 
