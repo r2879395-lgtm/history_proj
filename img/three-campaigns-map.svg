@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#fefce8"/>
+  <rect x="40" y="40" width="1120" height="620" rx="30" fill="#fef9c3" stroke="#d4af37" stroke-width="3"/>
+  <text x="80" y="110" fill="#1f2937" font-size="40" font-family="Inter, system-ui" font-weight="700">Three Campaigns of the Chinese Civil War</text>
+  <text x="80" y="155" fill="#6b7280" font-size="24" font-family="Inter, system-ui">Liaoshen · Huaihai · Pingjin (1948–1949)</text>
+  <rect x="90" y="200" width="340" height="380" rx="24" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2"/>
+  <rect x="430" y="200" width="340" height="380" rx="24" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
+  <rect x="770" y="200" width="340" height="380" rx="24" fill="#ecfdf3" stroke="#22c55e" stroke-width="2"/>
+  <text x="120" y="250" fill="#0f172a" font-size="30" font-family="Inter, system-ui" font-weight="700">Liaoshen</text>
+  <text x="120" y="290" fill="#0369a1" font-size="20">Northeast · Manchuria</text>
+  <path d="M140 340 C 210 310 260 300 340 280" stroke="#0ea5e9" stroke-width="4" fill="none" marker-end="url(#arrow-blue)"/>
+  <text x="120" y="380" fill="#0f172a" font-size="18">Destroys Manchurian</text>
+  <text x="120" y="405" fill="#0f172a" font-size="18">Nationalist armies.</text>
+  <text x="460" y="250" fill="#0f172a" font-size="30" font-family="Inter, system-ui" font-weight="700">Huaihai</text>
+  <text x="460" y="290" fill="#b91c1c" font-size="20">Central plains</text>
+  <path d="M480 340 C 560 320 610 310 700 300" stroke="#ef4444" stroke-width="4" fill="none" marker-end="url(#arrow-red)"/>
+  <text x="460" y="380" fill="#0f172a" font-size="18">Encircles and destroys</text>
+  <text x="460" y="405" fill="#0f172a" font-size="18">main KMT field armies.</text>
+  <text x="800" y="250" fill="#0f172a" font-size="30" font-family="Inter, system-ui" font-weight="700">Pingjin</text>
+  <text x="800" y="290" fill="#15803d" font-size="20">Beijing–Tianjin</text>
+  <path d="M820 340 C 900 320 960 305 1040 295" stroke="#22c55e" stroke-width="4" fill="none" marker-end="url(#arrow-green)"/>
+  <text x="800" y="380" fill="#0f172a" font-size="18">Siege and negotiated</text>
+  <text x="800" y="405" fill="#0f172a" font-size="18">surrender of northern cities.</text>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0ea5e9"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#ef4444"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#22c55e"/>
+    </marker>
+  </defs>
+  <text x="80" y="640" fill="#4b5563" font-size="18" font-family="Inter, system-ui">Schematic, student-created visualization – not a geographic map to scale.</text>
+</svg>

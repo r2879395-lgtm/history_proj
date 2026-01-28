@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="river" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="#e5e7eb"/>
+  <rect x="0" y="260" width="1200" height="260" fill="url(#river)"/>
+  <rect x="0" y="0" width="1200" height="260" fill="#fee2e2" opacity="0.6"/>
+  <rect x="0" y="520" width="1200" height="180" fill="#bbf7d0" opacity="0.7"/>
+  <text x="80" y="120" fill="#0f172a" font-size="40" font-family="Inter, system-ui" font-weight="700">Crossing the Yangtze River, 1949</text>
+  <text x="80" y="165" fill="#4b5563" font-size="22" font-family="Inter, system-ui">Symbolic representation of PLA units crossing the last major barrier.</text>
+  <g>
+    <rect x="140" y="320" width="220" height="70" rx="18" fill="#1f2937"/>
+    <rect x="450" y="345" width="260" height="70" rx="18" fill="#1f2937"/>
+    <rect x="840" y="310" width="220" height="70" rx="18" fill="#1f2937"/>
+    <circle cx="180" cy="310" r="18" fill="#f97316"/>
+    <circle cx="220" cy="305" r="12" fill="#facc15"/>
+    <circle cx="500" cy="335" r="16" fill="#f97316"/>
+    <circle cx="540" cy="330" r="11" fill="#facc15"/>
+    <circle cx="880" cy="300" r="16" fill="#f97316"/>
+    <circle cx="920" cy="295" r="11" fill="#facc15"/>
+  </g>
+  <path d="M200 380 C 340 420 520 420 640 400 C 780 380 940 370 1040 390" stroke="#facc15" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="10 10"/>
+  <text x="150" y="580" fill="#166534" font-size="22" font-family="Inter, system-ui">North bank: PLA staging areas</text>
+  <text x="150" y="615" fill="#166534" font-size="20">South bank: Nanjing, Shanghai, and the road to victory.</text>
+</svg>

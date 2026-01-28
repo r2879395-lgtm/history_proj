@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#bfdbfe"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="#f9fafb"/>
+  <rect x="0" y="0" width="1200" height="320" fill="url(#sky)"/>
+  <rect x="0" y="320" width="1200" height="380" fill="#fee2e2" opacity="0.6"/>
+  <rect x="80" y="260" width="360" height="360" rx="30" fill="#f97316"/>
+  <rect x="120" y="280" width="40" height="260" fill="#7f1d1d"/>
+  <circle cx="220" cy="340" r="32" fill="#fecaca"/>
+  <rect x="190" y="370" width="80" height="130" rx="18" fill="#1f2937"/>
+  <rect x="280" y="320" width="120" height="180" rx="16" fill="#e5e7eb"/>
+  <rect x="295" y="340" width="90" height="10" fill="#9ca3af"/>
+  <rect x="295" y="360" width="80" height="10" fill="#9ca3af"/>
+  <rect x="295" y="380" width="60" height="10" fill="#9ca3af"/>
+  <text x="480" y="180" fill="#0f172a" font-size="40" font-family="Inter, system-ui" font-weight="700">Proclamation of a New Government</text>
+  <text x="480" y="220" fill="#4b5563" font-size="22" font-family="Inter, system-ui">Stylized balcony scene overlooking a crowded square, October 1949.</text>
+  <rect x="480" y="260" width="620" height="320" rx="26" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+  <text x="510" y="305" fill="#111827" font-size="26" font-family="Inter, system-ui" font-weight="600">People's Republic of China declared</text>
+  <text x="510" y="345" fill="#4b5563" font-size="20" font-family="Inter, system-ui">A symbolic representation for educational use in your project.</text>
+</svg>

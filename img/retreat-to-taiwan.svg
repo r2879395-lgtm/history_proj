@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="#e5e7eb"/>
+  <rect x="0" y="260" width="1200" height="280" fill="url(#sea)"/>
+  <rect x="0" y="540" width="1200" height="160" fill="#f9fafb"/>
+  <text x="80" y="120" fill="#111827" font-size="40" font-family="Inter, system-ui" font-weight="700">Retreat to Taiwan, 1949</text>
+  <text x="80" y="165" fill="#4b5563" font-size="22" font-family="Inter, system-ui">Stylized evacuation scene with crowded troop transport ships.</text>
+  <rect x="140" y="330" width="320" height="120" rx="18" fill="#111827"/>
+  <rect x="160" y="310" width="60" height="30" fill="#9ca3af"/>
+  <rect x="520" y="350" width="320" height="120" rx="18" fill="#111827"/>
+  <rect x="540" y="330" width="60" height="30" fill="#9ca3af"/>
+  <rect x="860" y="320" width="220" height="110" rx="18" fill="#111827"/>
+  <rect x="880" y="300" width="50" height="28" fill="#9ca3af"/>
+  <g fill="#e5e7eb">
+    <circle cx="180" cy="420" r="10"/>
+    <circle cx="210" cy="420" r="10"/>
+    <circle cx="240" cy="420" r="10"/>
+    <circle cx="570" cy="440" r="10"/>
+    <circle cx="600" cy="440" r="10"/>
+    <circle cx="630" cy="440" r="10"/>
+    <circle cx="900" cy="410" r="10"/>
+    <circle cx="930" cy="410" r="10"/>
+  </g>
+  <text x="80" y="600" fill="#1f2937" font-size="20" font-family="Inter, system-ui">Symbolic student-created art – for precise historical photographs, see your sources page.</text>
+</svg>
