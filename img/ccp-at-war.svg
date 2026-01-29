@@ -18,9 +18,7 @@
   <text x="500" y="435" fill="#e5e7eb" font-size="26" font-family="Inter, system-ui">Campaigns</text>
   <text x="880" y="402" fill="#e5e7eb" font-size="26" font-family="Inter, system-ui">Yangtze</text>
   <text x="1270" y="345" fill="#e5e7eb" font-size="26" font-family="Inter, system-ui">PRC</text>
-  <polygon points="260,330 420,260 560,330 420,380" fill="#b91c1c" opacity="0.85"/>
-  <polygon points="360,280 440,210 520,280" fill="#facc15"/>
-  <rect x="1040" y="410" width="460" height="190" rx="26" fill="#0f172a" opacity="0.88"/>
+  <rect x="980" y="400" width="620" height="210" rx="26" fill="#0f172a" opacity="0.88"/>
   <text x="1070" y="465" fill="#e5e7eb" font-size="30" font-family="Inter, system-ui" font-weight="600">"Mao went to war"</text>
   <text x="1070" y="505" fill="#9ca3af" font-size="22" font-family="Inter, system-ui">Revolutionary fighters, red flag, and campaign map</text>
   <text x="1070" y="540" fill="#9ca3af" font-size="22" font-family="Inter, system-ui">represented symbolically for this project.</text>
