@@ -260,7 +260,7 @@
                 <p class="text-gray-700 leading-relaxed">After the fall of Shanghai in May 1949, organized Nationalist resistance on the mainland quickly unraveled. PLA forces advanced through south and southwest China, occupying remaining strongholds with limited fighting as many Nationalist units surrendered or slipped away. At the same time, Chiang Kai-shek and his government began a massive retreat across the Taiwan Strait, moving troops, officials, and resources to the island that would become their long-term base.</p>
 
                 <figure class="mt-4">
-                    <img src="img/retreat-to-taiwan.jpg" alt="Historical photograph of Nationalist troops boarding ships during the retreat to Taiwan" class="w-full rounded-xl shadow-lg border border-nhd-blue/40 object-cover max-h-[420px] mx-auto">
+                    <img src="img/retreat-to-taiwan.jpg" alt="Historical photograph of Nationalist troops boarding ships during the retreat to Taiwan" class="w-full rounded-xl shadow-lg border border-nhd-blue/40 object-cover max-h-[420px] mx-auto enlargeable-image">
                     <figcaption class="mt-2 text-sm text-gray-600 italic text-center">Nationalist soldiers and civilians boarding ships as they retreat toward Taiwan.</figcaption>
                 </figure>
             </div>
@@ -271,7 +271,7 @@
                 <p class="text-gray-700 leading-relaxed">On October 1, 1949, Mao Zedong stood at Tiananmen in Beijing and announced the founding of the Peoples Republic of China, declaring that the Chinese people have stood up. This ceremony symbolized the end of decades of civil war and foreign intervention and the beginning of Communist rule over the mainland. While the PRC consolidated power on the continent, the Nationalist Republic of China survived on Taiwan under martial law, claiming to remain the legitimate government of all China.</p>
 
                 <figure class="mt-4">
-                    <img src="img/proclamation-prc.jpg" alt="Painting of Mao Zedong proclaiming the founding of the People's Republic of China at Tiananmen" class="w-full rounded-xl shadow-lg border border-nhd-blue/40 object-cover max-h-[420px] mx-auto">
+                    <img src="img/proclamation-prc.jpg" alt="Painting of Mao Zedong proclaiming the founding of the People's Republic of China at Tiananmen" class="w-full rounded-xl shadow-lg border border-nhd-blue/40 object-cover max-h-[420px] mx-auto enlargeable-image">
                     <figcaption class="mt-2 text-sm text-gray-600 italic text-center">Mao Zedong proclaiming the founding of the Peoples Republic of China in Beijing, 1949.</figcaption>
                 </figure>
             </div>
@@ -288,6 +288,15 @@
         </div>
     </div>
     
+    <!-- Image lightbox overlay -->
+    <div id="image-lightbox" class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm hidden items-center justify-center p-4 z-40">
+        <div class="relative max-w-4xl w-full">
+            <button id="image-lightbox-close" class="absolute -top-3 -right-3 bg-white text-gray-700 rounded-full shadow-lg px-3 py-1 text-sm font-semibold hover:bg-gray-100 focus:outline-none">✕</button>
+            <img id="image-lightbox-img" src="" alt="Expanded image" class="max-h-[80vh] w-auto mx-auto rounded-xl shadow-2xl bg-white">
+            <p id="image-lightbox-caption" class="mt-3 text-center text-gray-100 text-sm"></p>
+        </div>
+    </div>
+
     <div id="message-box" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden items-center justify-center p-4 z-50">
         <div class="bg-white p-6 rounded-lg shadow-2xl max-w-sm w-full">
             <h3 class="text-xl font-bold text-indigo-600 mb-3">Success</h3>
@@ -307,6 +316,56 @@
             msgBox.classList.remove('hidden');
             msgBox.classList.add('flex');
         }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const lightbox = document.getElementById('image-lightbox');
+            const lightboxImg = document.getElementById('image-lightbox-img');
+            const lightboxCaption = document.getElementById('image-lightbox-caption');
+            const closeBtn = document.getElementById('image-lightbox-close');
+
+            if (!lightbox || !lightboxImg || !closeBtn) return;
+
+            function closeLightbox() {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                lightboxImg.src = '';
+            }
+
+            function openLightbox(img) {
+                const figure = img.closest('figure');
+                const captionEl = figure ? figure.querySelector('figcaption') : null;
+
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt || '';
+                lightboxCaption.textContent = captionEl ? captionEl.textContent.trim() : (img.alt || '');
+
+                lightbox.classList.remove('hidden');
+                lightbox.classList.add('flex');
+            }
+
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                    closeLightbox();
+                }
+            });
+
+            const images = document.querySelectorAll('.enlargeable-image');
+            images.forEach(function (img) {
+                img.classList.add('cursor-zoom-in', 'transition', 'duration-200', 'hover:shadow-2xl', 'hover:-translate-y-1');
+                img.addEventListener('click', function () {
+                    openLightbox(img);
+                });
+            });
+        });
     </script>
 </body>
 </html>

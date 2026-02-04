@@ -260,7 +260,7 @@
                 <p class="text-gray-700 leading-relaxed">Between September 1948 and January 1949, the Liaoshen, Huaihai, and Pingjin campaigns shattered Nationalist military power. In a few months, the PLA destroyed or captured the KMTs best armies, seized most major northern cities, and gained control of key railways, factories, and grain regions. After these defeats, the Nationalists could no longer defend the mainland in a coordinated way.</p>
 
                 <figure class="mt-4 flex flex-col items-center">
-                    <img src="img/image (10).png" alt="Map of the Liaoshen, Huaihai, and Pingjin campaigns during the Chinese Civil War" class="max-h-72 w-auto rounded-xl shadow-lg border border-nhd-blue/40 object-contain mx-auto">
+                    <img src="img/image (10).png" alt="Map of the Liaoshen, Huaihai, and Pingjin campaigns during the Chinese Civil War" class="max-h-72 w-auto rounded-xl shadow-lg border border-nhd-blue/40 object-contain mx-auto enlargeable-image">
                     <figcaption class="mt-2 text-sm text-gray-600 italic text-center">The map of the Three Campaigns.</figcaption>
                 </figure>
             </div>
@@ -283,6 +283,15 @@
         </div>
     </div>
     
+    <!-- Image lightbox overlay -->
+    <div id="image-lightbox" class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm hidden items-center justify-center p-4 z-40">
+        <div class="relative max-w-4xl w-full">
+            <button id="image-lightbox-close" class="absolute -top-3 -right-3 bg-white text-gray-700 rounded-full shadow-lg px-3 py-1 text-sm font-semibold hover:bg-gray-100 focus:outline-none">✕</button>
+            <img id="image-lightbox-img" src="" alt="Expanded image" class="max-h-[80vh] w-auto mx-auto rounded-xl shadow-2xl bg-white">
+            <p id="image-lightbox-caption" class="mt-3 text-center text-gray-100 text-sm"></p>
+        </div>
+    </div>
+
     <div id="message-box" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden items-center justify-center p-4 z-50">
         <div class="bg-white p-6 rounded-lg shadow-2xl max-w-sm w-full">
             <h3 class="text-xl font-bold text-indigo-600 mb-3">Success</h3>
@@ -302,6 +311,56 @@
             msgBox.classList.remove('hidden');
             msgBox.classList.add('flex');
         }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const lightbox = document.getElementById('image-lightbox');
+            const lightboxImg = document.getElementById('image-lightbox-img');
+            const lightboxCaption = document.getElementById('image-lightbox-caption');
+            const closeBtn = document.getElementById('image-lightbox-close');
+
+            if (!lightbox || !lightboxImg || !closeBtn) return;
+
+            function closeLightbox() {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                lightboxImg.src = '';
+            }
+
+            function openLightbox(img) {
+                const figure = img.closest('figure');
+                const captionEl = figure ? figure.querySelector('figcaption') : null;
+
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt || '';
+                lightboxCaption.textContent = captionEl ? captionEl.textContent.trim() : (img.alt || '');
+
+                lightbox.classList.remove('hidden');
+                lightbox.classList.add('flex');
+            }
+
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                    closeLightbox();
+                }
+            });
+
+            const images = document.querySelectorAll('.enlargeable-image');
+            images.forEach(function (img) {
+                img.classList.add('cursor-zoom-in', 'transition', 'duration-200', 'hover:shadow-2xl', 'hover:-translate-y-1');
+                img.addEventListener('click', function () {
+                    openLightbox(img);
+                });
+            });
+        });
     </script>
 
 </body>
